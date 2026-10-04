@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Fairy × Genius</title>
+<meta name="description" content="Fairy 與 Genius 的作品集">
+<meta name="robots" content="noai, noimageai">
+<style>
+  :root{--bg:#fbf8f2;--ink:#2b2a35;--muted:#7a7686;--card:#fff;--line:#ece4d6;--gold:#c8962a;--violet:#6b5bd2}
+  @media (prefers-color-scheme:dark){:root{--bg:#16141f;--ink:#f1edf8;--muted:#a49fb3;--card:#211e2d;--line:#332e44;--gold:#e0b552;--violet:#a99cff}}
+  *{box-sizing:border-box}
+  body{margin:0;min-height:100dvh;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"PingFang TC","Noto Sans TC","Microsoft JhengHei",sans-serif;display:flex;flex-direction:column;align-items:center;padding:72px 16px 48px}
+  h1{font-size:clamp(32px,8vw,48px);letter-spacing:.04em;margin:0}
+  h1 span{color:var(--gold)}
+  .sub{color:var(--muted);margin:10px 0 40px;letter-spacing:.1em}
+  .works{display:grid;gap:14px;width:100%;max-width:520px}
+  a.work{display:flex;gap:16px;align-items:center;padding:18px 20px;border:1px solid var(--line);border-radius:16px;background:var(--card);color:inherit;text-decoration:none;transition:transform .12s,border-color .12s}
+  a.work:hover{transform:translateY(-2px);border-color:var(--violet)}
+  .icon{font-size:34px;line-height:1;flex:none}
+  .work strong{display:block;font-size:18px}
+  .work small{color:var(--muted);font-size:14px;line-height:1.5}
+  footer{margin-top:auto;padding-top:48px;color:var(--muted);font-size:12px;letter-spacing:.08em}
+</style>
+</head>
+<body>
+  <h1>Fairy <span>×</span> Genius</h1>
+  <p class="sub">我們一起做的小東西</p>
+  <main class="works">
+    <a class="work" href="https://fairyprompt.com/"><span class="icon">🧚</span><span><strong>Fairy Prompt</strong><small>把好用的靈感，變成日常的 Prompt 辭典</small></span></a>
+    <a class="work" href="xiaoren/"><span class="icon">🩴</span><span><strong>小人退散</strong><small>寫下名字、選好武器，打走小人，好運自然來</small></span></a>
+  </main>
+  <footer>© Fairy × Genius</footer>
+</body>
+</html>
