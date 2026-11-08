@@ -90,6 +90,8 @@ footer{margin-top:24px;padding-block:20px 40px;color:var(--muted);font-size:14px
 @media (max-width:520px){.card .role{font-size:12.5px;letter-spacing:-.01em}.act{grid-template-columns:1fr;padding:20px}.act .no{margin-bottom:8px;width:48px;height:48px;font-size:22px}.film{border-radius:28px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-pair{width:62%}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.trailer{border-radius:36px}.card{border-radius:30px}}
 @media (max-width:380px){.card .role{font-size:11.5px}}
 
+body .top{padding:8px 8px 8px 18px}.navr{display:flex;align-items:center;gap:8px}.top .seg{margin:0;padding:2px}.top .seg button{font-size:13px;padding:5px 12px}.top a{padding:6px 12px;font-size:14px}
+@media (max-width:380px){.top b{font-size:14px}.top .seg button{padding:5px 9px}}
 p.role{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 12px!important}
 .card p.role span{background:var(--green-soft);border-radius:999px;padding:3px 12px;white-space:nowrap;line-height:1.5}
 body .card .pic,body .cards .card:nth-child(n) .pic{background:linear-gradient(180deg,var(--surface),var(--green-soft))}
@@ -107,7 +109,7 @@ img.sil,img.sil.b,.card .pic img.sil{background:none;-webkit-mask:none;mask:none
 </head>
 <body>
 <div class="wrap">
-<nav class="top" aria-label="Nav"><b>FAIRY GENIUS</b><a data-v="tw" href="#">回首頁</a><a data-v="hk" href="#">返回首頁</a><a data-v="en" lang="en" href="#">Home</a></nav>
+<nav class="top" aria-label="Nav"><b>FAIRY GENIUS</b><span class="navr"><span class="seg" role="group" aria-label="語言 Language"><button type="button" data-l="zh" aria-pressed="true">中文</button><button type="button" data-l="en" aria-pressed="false">English</button></span><a data-v="tw" href="#">回首頁</a><a data-v="hk" href="#">返回首頁</a><a data-v="en" lang="en" href="#">Home</a></span></nav>
 <header class="hero">
 <p class="kick" data-v="zh">團隊故事</p><p class="kick" data-v="en" lang="en">Our story</p>
 <h1><span data-v="zh"><span class="nw">一個願望，</span><span class="nw">一團火，</span><span class="nw">一本辭典</span></span><span data-v="en" lang="en">A wish, a spark, and a dictionary</span></h1>
@@ -140,7 +142,6 @@ img.sil,img.sil.b,.card .pic img.sil{background:none;-webkit-mask:none;mask:none
 <section class="blk" aria-labelledby="h-who">
 <p class="kick" data-v="zh">創辦人</p><p class="kick" data-v="en" lang="en">Founders</p>
 <h2 id="h-who"><span data-v="zh">兩位創辦人，加一組 AI 員工</span><span data-v="en" lang="en">Two founders, plus a team of AI staff</span></h2>
-<div class="seg" role="group" aria-label="語言 Language"><button type="button" data-l="zh" aria-pressed="true">中文</button><button type="button" data-l="en" aria-pressed="false">English</button></div>
 <div class="cards">
 <article class="card" data-c="tw"><div class="pic" role="img" aria-label="Ms. M.Fan silhouette"><img class="sil" src="img/msmfan_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Ms. M.Fan</h3><p class="role"><span>共同創辦人</span><span>中學老師</span><span>AI 愛好者</span></p><p>資深中學老師，任教視覺藝術科、資訊及通訊科技科，以及公民、經濟與社會科，並負責其他學習經歷（OLE）。</p><p>Fairy Prompt 的構想人：她提出「Prompt 辭典」——分類、搜尋、一鍵複製。</p><p>品牌標誌與視覺風格由她設計定稿；她寫的 prompt 都先在課堂試用、改了又改，千錘百鍊後才收進庫裡。</p></div></article>
 <article class="card" data-c="en" lang="en"><div class="pic" role="img" aria-label="Ms. M.Fan silhouette"><img class="sil" src="img/msmfan_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Ms. M.Fan</h3><p class="role"><span>Co-founder</span><span>Secondary School Teacher</span><span>AI Enthusiast</span></p><p>An experienced secondary school teacher of Visual Arts, Information and Communication Technology, and Citizenship, Economics and Society, who also runs Other Learning Experiences (OLE).</p><p>Conceived Fairy Prompt&nbsp;— a “prompt dictionary” you can browse, search and copy in one tap.</p><p>Designed the brand mark and visual style; the site’s clean, minimal look is hers.</p><p>She writes her prompts herself, tests them in her own classroom and refines them again and again before they go into the library.</p></div></article>
