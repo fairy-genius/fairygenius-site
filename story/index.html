@@ -71,7 +71,7 @@ section.blk{padding-block:48px 8px}
 .card h3{font:700 20px/1.4 var(--sans);margin:0}
 .card .role{font-size:14px;color:var(--green);font-weight:700;margin:2px 0 10px}
 .card p{margin:0 0 8px;font-size:15px;color:var(--muted);text-wrap:pretty}
-.award[hidden]{display:none}
+.cards [hidden]{display:none}
 .faq{margin:0;max-width:36em;color:var(--muted);text-wrap:pretty}
 .team{margin-top:16px;border:1.5px dashed var(--line);border-radius:12px;padding:16px 20px;color:var(--muted);font-size:15px}
 .cta{margin-top:48px;background:var(--green-soft);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between}
@@ -165,16 +165,19 @@ footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);
 <div class="cards">
 <article class="card"><div class="pic"><img src="img/msmfan_brush.webp" alt="Ms. M.Fan 的剪影，手持畫筆" width="640" height="640"></div><div class="bd">
 <h3>Ms. M.Fan</h3>
-<p class="role">共同創辦人・香港中學教師</p>
-<p>Fairy Prompt 的點子與設計，都從她的課堂出發。</p>
-<p>她把課堂上的需求變成 prompt，在自己班上試過，才上架。</p>
+<p class="role" data-r="tw">共同創辦人・香港中學教師</p>
+<p data-r="tw">Fairy Prompt 的點子與設計，都從她的課堂出發。</p>
+<p data-r="tw">她把課堂上的需求變成 prompt，在自己班上試過，才上架。</p>
+<p class="role" data-r="hk" hidden lang="en">Co-founder · Hong Kong secondary school teacher</p>
+<p data-r="hk" hidden lang="en">The ideas and design behind Fairy Prompt come from her classroom.</p>
 </div></article>
 <article class="card"><div class="pic"><img src="img/richard_call.webp" alt="Richard Tsai 的剪影" width="640" height="640"></div><div class="bd">
-<h3>Richard Tsai　蔡宗翰</h3>
-<p class="role">共同創辦人</p>
-<p>國立中央大學教授，中華民國人工智慧學會（TAAI）理事長，帶領一組以清朝大臣命名的 AI 員工。</p>
-<p class="award" data-r="tw">著有《寫給中學生看的AI課》，獲吳大猷科普著作獎青少年特別獎。</p>
-<p class="award" data-r="hk" hidden>著有《寫給中學生看的AI課》，獲香港教育城十本好讀教師推薦好讀。</p>
+<h3 data-r="tw">蔡宗翰</h3>
+<h3 data-r="hk" hidden lang="en">Prof. Richard Tsai</h3>
+<p data-r="tw">國立中央大學教授、中華民國人工智慧學會（TAAI）理事長，帶領一組以清朝大臣命名的 AI 員工。</p>
+<p data-r="tw">著有《寫給中學生看的AI課》，獲吳大猷科普著作獎青少年特別獎。</p>
+<p data-r="hk" hidden lang="en">Professor, National Central University (Taiwan); President, Taiwanese Association for Artificial Intelligence (TAAI); leads a team of AI staff named after Qing-dynasty ministers.</p>
+<p data-r="hk" hidden lang="en">Author of an AI book for secondary students; a teachers' pick in HKedCity's Top Ten Book Picks.</p>
 </div></article>
 </div>
 <p class="team">還有一整組 AI 員工，負責開發、改寫、翻譯和日常營運。</p>
@@ -195,10 +198,12 @@ footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);
 </div>
 <script>
 (function(){
-var btns=document.querySelectorAll('.seg button'),aw=document.querySelectorAll('.award'),r='tw';
+var btns=document.querySelectorAll('.seg button'),aw=document.querySelectorAll('.cards [data-r]'),r='tw';
 try{var q=new URLSearchParams(location.search).get('region');
 if(q==='hk'||q==='tw')r=q;else{var s=localStorage.getItem('fg-region');if(s==='hk'||s==='tw')r=s;else if(/-HK\b/i.test(navigator.language||''))r='hk';}}catch(e){}
-function set(v,save){r=v;btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===v?'true':'false')});aw.forEach(function(a){a.hidden=a.dataset.r!==v});if(save){try{localStorage.setItem('fg-region',v)}catch(e){}}}
+var HK={"AI 員工：兩個月做出 1,500 多則": "AI 員工：兩個月製作 1,500 多則", "我是 Fairy。這個故事從一間教室開始，我來說給你聽。": "我是 Fairy。這個故事從一間課室開始，我來說給你聽。", "回首頁": "返回首頁", "團隊故事影片": "團隊故事短片", "完整版約 2 到 3 分鐘，製作中": "完整版約 2 至 3 分鐘，製作中", "故事從教室開始。老師要備課、要出題、要管班級，一天只有二十四小時。": "故事從課室開始。老師要備課、出題、管理班級，一天只有二十四小時。", "AI 工具愈來愈多，可是每一個都得自己摸索：該怎麼問，結果能不能拿去用。": "AI 工具愈來愈多，可是每一個都得自己摸索：該怎樣提問，結果能不能直接使用。", "Richard 聽完，三天就做出第一個原型。過幾天，它有了名字：Fairy Prompt。": "Richard 聽完，三天就做出第一個原型。再過幾天，它有了名字：Fairy Prompt。", "一本辭典，不能只靠兩個人寫。所以我們建立了一組 AI 員工：有的整理分類，有的把內容改寫成台灣版和香港版，有的翻成英文，有的替內容分級、檢查範例。": "一本辭典，不能只靠兩個人編寫。所以我們建立了一組 AI 員工：有的整理分類，有的把內容改寫成香港版和台灣版，有的翻譯成英文，有的為內容分級、檢查示例。", "Richard 把每個 AI 員工都當成一位清朝大臣：有人寫程式、有人審內容、有人畫圖，各有官職，做得好會升官。兩個人，就這樣帶著一整個朝廷。": "Richard 把每個 AI 員工都當成一位清朝大臣：有人編寫程式、有人審核內容、有人繪圖，各有官職，表現好就會升官。兩個人，就這樣帶領着一整個朝廷。", "兩個月，<span class=\"big\">1,500 多則</span>港台雙版、中英文的 prompt 做出來了。": "兩個月，<span class=\"big\">1,500 多則</span>港台雙版、中英文的 prompt 製作出來了。", "回到教室": "回到課室", "能走進教室的，才留下來": "能走進課室的，才留下來", "辭典好不好用，要回到教室才知道。Ms. M.Fan 把課堂上的需求變成 prompt，許多都先在自己班上試過，才上架。": "辭典好不好用，要回到課室才知道。Ms. M.Fan 把課堂上的需要變成 prompt，不少都先在自己班上試用過，才推出。", "能走進教室的，才留下來。11 月 30 日，Fairy Prompt 開放試用。": "能走進課室的，才留下來。11 月 30 日，Fairy Prompt 開放試用。", "開始對外演講推廣": "開始對外演講及推廣", "是一組各有分工的 AI 助手，負責寫程式、審內容、畫圖、改寫和翻譯。Richard 把每一個都當成一位清朝大臣，各有官職，做得好會升官。成品由兩位創辦人把關，能走進教室的，才上架。": "是一組各有分工的 AI 助手，負責編寫程式、審核內容、繪圖、改寫和翻譯。Richard 把每一個都當成一位清朝大臣，各有官職，表現好就會升官。成果由兩位創辦人把關，能走進課室的，才推出。"};
+function swap(v){document.documentElement.lang=v==='hk'?'zh-HK':'zh-Hant';document.querySelectorAll('.wrap *').forEach(function(el){if(el.children.length&&el.innerHTML.indexOf('<span class="big">')<0)return;var tw=el.dataset.tw;if(tw===undefined){var h=el.innerHTML.trim();if(!(h in HK))return;el.dataset.tw=h;tw=h}el.innerHTML=v==='hk'?HK[tw]:tw})}
+function set(v,save){swap(v);r=v;btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===v?'true':'false')});aw.forEach(function(a){a.hidden=a.dataset.r!==v});if(save){try{localStorage.setItem('fg-region',v)}catch(e){}}}
 btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.r,true)})});
 set(r,false);
 })();
