@@ -30,9 +30,9 @@ h2{font:700 clamp(23px,4.8vw,30px)/1.35 var(--serif);margin:0 0 12px;text-wrap:b
 /* 影片位置：放入影片時，把 .film 內的 .film-ph 換成 <video controls poster="…" src="…"> */
 .film{margin:28px 0 0;border-radius:14px;overflow:hidden;background:var(--ink);aspect-ratio:16/9;position:relative}
 .film video{width:100%;height:100%;display:block;object-fit:cover}
-.film-ph{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;align-items:center;color:#e8efe9;padding:0 6%;gap:4%}
-.film-ph .fp-fig{background:var(--paper);border-radius:12px;height:84%;display:grid;place-items:center;justify-self:end;aspect-ratio:1/1;max-width:100%}
-.film-ph img.sil{height:100%;width:auto;max-width:100%;object-fit:contain}
+.film-ph{position:absolute;inset:0;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;color:#e8efe9;padding:0 6%;gap:4%}
+.film-ph .fp-pair{display:grid;grid-template-columns:1fr 1fr;gap:4%;min-width:0;align-self:center}.film-ph .fp-fig{background:var(--paper);border-radius:12px;width:100%;aspect-ratio:1/1;min-width:0}
+.film-ph .fp-fig{position:relative;overflow:hidden}.film-ph img.sil{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
 .film-ph .fp-txt{display:grid;gap:8px;justify-items:start}
 .film-ph img.mark{width:44px;height:auto;background:var(--paper);border-radius:50%;padding:7px}
 .film-ph strong{font:700 clamp(15px,3.4vw,24px)/1.4 var(--serif)}
@@ -77,7 +77,7 @@ section.blk{padding-block:48px 8px}
 .cta h2{margin:0 0 4px}.cta p{margin:0;color:var(--muted)}
 footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (max-width:720px){.tl,.cards{grid-template-columns:1fr}.hero{padding-block:36px 28px}.card .pic{aspect-ratio:16/10}}
-@media (max-width:520px){.act{grid-template-columns:1fr;padding:18px}.act .no{margin-bottom:6px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-fig{height:62%;justify-self:center}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.cta{padding:22px}}
+@media (max-width:520px){.act{grid-template-columns:1fr;padding:18px}.act .no{margin-bottom:6px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-pair{width:62%}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.cta{padding:22px}}
 </style>
 </head>
 <body>
@@ -92,7 +92,7 @@ footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);
 <!-- 完整版影片（2–3 分鐘）：做好後把整個 .film-ph 換成 <video controls preload="metadata" poster="img/film-poster.jpg" src="video/team-story-full.mp4"></video> -->
 <figure class="film" aria-label="團隊故事影片（完整版）">
 <div class="film-ph" role="img" aria-label="影片製作中">
-<div class="fp-fig"><img class="sil" src="img/msmfan_brush.webp" alt="" width="640" height="640"></div>
+<div class="fp-pair"><div class="fp-fig"><img class="sil" src="img/msmfan_brush.webp" alt="" width="640" height="640"></div><div class="fp-fig"><img class="sil" src="img/richard_call.webp" alt="" width="640" height="640"></div></div>
 <div class="fp-txt"><img class="mark" src="img/fairy-mark.png" alt="" width="44" height="39"><strong>團隊故事影片</strong><span>完整版約 2 到 3 分鐘，製作中</span></div>
 </div>
 </figure>
@@ -161,18 +161,18 @@ footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);
 <h2 id="h-who">兩位創辦人，加一整組 AI 員工</h2>
 <div class="seg" role="group" aria-label="顯示地區"><button type="button" data-r="tw" aria-pressed="true">台灣</button><button type="button" data-r="hk" aria-pressed="false">香港</button></div>
 <div class="cards">
-<article class="card"><div class="pic"><div class="mono" aria-hidden="true">R</div></div><div class="bd">
+<article class="card"><div class="pic"><img src="img/msmfan_brush.webp" alt="Ms. M.Fan 的剪影，手持畫筆" width="640" height="640"></div><div class="bd">
+<h3>Ms. M.Fan</h3>
+<p class="role">共同創辦人・香港中學教師</p>
+<p>Fairy 的點子與設計，都從她的課堂出發。</p>
+<p>她把課堂上的需求變成 prompt，在自己班上試過，才上架。</p>
+</div></article>
+<article class="card"><div class="pic"><img src="img/richard_call.webp" alt="Richard Tsai 的剪影" width="640" height="640"></div><div class="bd">
 <h3>Richard Tsai　蔡宗翰</h3>
 <p class="role">共同創辦人</p>
 <p>國立中央大學教授，中華民國人工智慧學會（TAAI）理事長。</p>
 <p class="award" data-r="tw">著有《寫給中學生看的AI課》，獲吳大猷科普著作獎青少年特別獎。</p>
 <p class="award" data-r="hk" hidden>著有《寫給中學生看的AI課》，獲香港教育城十本好讀教師推薦好讀。</p>
-</div></article>
-<article class="card"><div class="pic"><img src="img/msmfan_main.webp" alt="Ms. M.Fan 的剪影" width="640" height="640"></div><div class="bd">
-<h3>Ms. M.Fan</h3>
-<p class="role">共同創辦人・香港中學教師</p>
-<p>Fairy 的點子與設計，都從她的課堂出發。</p>
-<p>她把課堂上的需求變成 prompt，在自己班上試過，才上架。</p>
 </div></article>
 </div>
 <p class="team">還有一整組 AI 員工，負責開發、改寫、翻譯和日常營運。</p>
