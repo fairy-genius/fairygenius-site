@@ -79,6 +79,7 @@ section.blk{padding-block:48px 8px}
 footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (max-width:720px){.cards{grid-template-columns:1fr}.hero{padding-block:36px 28px}.card .pic{aspect-ratio:16/10}}
 @media (max-width:520px){.card .role{font-size:12.5px;letter-spacing:-.01em}.act{grid-template-columns:1fr;padding:18px}.act .no{margin-bottom:6px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-pair{width:62%}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.cta{padding:22px}}
+@media (max-width:380px){.card .role{font-size:11.5px}}
 </style>
 </head>
 <body>
@@ -88,7 +89,7 @@ footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);
 
 <header class="hero">
 <p class="kick">團隊故事</p>
-<h1>老師的難題，遇上一組 AI 員工</h1>
+<h1><span style="white-space:nowrap">老師的難題，</span><span style="white-space:nowrap">遇上一組 AI 員工</span></h1>
 <p class="lead">我是 Fairy。這個故事從一間教室開始，我來說給你聽。</p>
 <!-- 完整版影片（2–3 分鐘）：做好後把整個 .film-ph 換成 <video controls preload="metadata" poster="img/film-poster.jpg" src="video/team-story-full.mp4"></video> -->
 <figure class="film" aria-label="團隊故事影片（完整版）">
@@ -133,7 +134,7 @@ footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);
 <h3>1,500 多則，每一則都有人把關</h3>
 <div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col">
 <p>一本辭典，不能只靠兩個人寫。我們有一組以清朝大臣命名的 AI 員工幫忙整理與改寫。</p>
-<p><span class="big">港台雙版、中英文</span>的 prompt，就這樣一則一則累⁠積⁠起⁠來⁠。</p></div></div>
+<p><span class="big">港台雙版、中英文</span> prompt，就這樣一則一則累⁠積⁠起⁠來⁠。</p></div></div>
 </div></li>
 
 <li class="act"><div class="no">5</div><div>
@@ -194,7 +195,9 @@ var btns=document.querySelectorAll('.seg button'),aw=document.querySelectorAll('
 try{var q=new URLSearchParams(location.search).get('region');
 if(q==='hk'||q==='tw')r=q;else{var s=localStorage.getItem('fg-region');if(s==='hk'||s==='tw')r=s;else if(/-HK\b/i.test(navigator.language||''))r='hk';}}catch(e){}
 var HK={"我是 Fairy。這個故事從一間教室開始，我來說給你聽。": "我是 Fairy。這個故事從一間課室開始，我來說給你聽。", "回首頁": "返回首頁", "團隊故事影片": "團隊故事短片", "完整版約 2 到 3 分鐘，製作中": "完整版約 2 至 3 分鐘，製作中", "故事從教室開始。老師要備課、要出題、要管班級，一天只有二⁠十⁠四⁠小⁠時⁠。": "故事從課室開始。老師要備課、出題、管理班級，一天只有二⁠十⁠四⁠小⁠時⁠。", "AI 工具愈來愈多，可是每一個都得自己摸索：該怎麼問，結果能不能拿去用。": "AI 工具愈來愈多，可是每一個都得自己摸索：該怎樣提問，結果能不能直接使用。", "回到教室": "回到課室", "能走進教室的，才留下來": "能走進課室的，才留下來", "開始對外演講推廣": "開始對外演講及推廣", "推出台灣版、香港版與國際英文版": "推出香港版、台灣版及國際英文版", "一本辭典，不能只靠兩個人寫。我們有一組以清朝大臣命名的 AI 員工幫忙整理與改寫。": "一本辭典，不能只靠兩個人編寫。我們有一組以清朝大臣命名的 AI 員工幫忙整理與改寫。", "辭典好不好用，要回到教室才知道。Ms. M.Fan 把課堂上的需求變成 prompt。": "辭典好不好用，要回到課室才知道。Ms. M.Fan 把課堂上的需要變成 prompt。"};
-function swap(v){document.documentElement.lang=v==='hk'?'zh-HK':'zh-Hant';document.querySelectorAll('.wrap *').forEach(function(el){if(el.children.length&&el.innerHTML.indexOf('<span class="big">')<0)return;var tw=el.dataset.tw;if(tw===undefined){var h=el.innerHTML.trim();if(!(h in HK))return;el.dataset.tw=h;tw=h}el.innerHTML=v==='hk'?HK[tw]:tw})}
+var PROT=['第一個原型','第一個','一個原型','中英文','港台雙版','兩位創辦人','創辦人','清朝大臣','一則一則','一鍵複製','整理與改寫','把關上架'],J='⁠',CJK=/[㐀-鿿]/,CL=/^[，。、；：！？）」』》”…—]+$/;
+function phrase(){if(!window.Intl||!Intl.Segmenter)return;var sg=new Intl.Segmenter('zh-Hant',{granularity:'word'});document.querySelectorAll('.wrap h1,.wrap h2,.wrap h3,.wrap p').forEach(function(el){var tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),ns=[],n;while(n=tw.nextNode())ns.push(n);ns.forEach(function(nd,ni){var t=nd.nodeValue.split(J).join('').replace(/(Fairy|Ms\.) (Prompt|Genius|M\.Fan)/g,'$1\u00a0$2').replace(/(AI) (工具|員工)/g,'$1\u00a0$2').replace(/(\d+) (月|日)/g,'$1\u00a0$2').replace(/(\d) (日)/g,'$1\u00a0$2').replace(/(Prompt) (辭典)/g,'$1\u00a0$2');if(!CJK.test(t)){nd.nodeValue=t;return}var parts=[];Array.from(sg.segment(t)).forEach(function(g){var w=g.segment;if(CL.test(w)&&parts.length){parts[parts.length-1].t+=w;return}parts.push({t:w,s:g.index,w:g.isWordLike&&CJK.test(w)&&Array.from(w).length>1})});var rg=[];PROT.forEach(function(ph){var i=t.indexOf(ph);while(i>=0){rg.push([i,i+ph.length]);i=t.indexOf(ph,i+ph.length)}});rg.forEach(function(r){var f=-1;parts.forEach(function(q,qi){var e=q.s+q.t.length;if(q.s<r[1]&&e>r[0]){if(f<0)f=qi;else{parts[f].t+=q.t;q.t='';q.dead=1}}});if(f>=0)parts[f].w=true});parts=parts.filter(function(q){return !q.dead});var out=parts.map(function(q){return q.w?Array.from(q.t.replace(/[，。、；：！？）」』》”…—]+$/,'')).join(J)+q.t.replace(/^.*?([，。、；：！？）」』》”…—]*)$/,function(m,a){return a?J+a:''}):(CL.test(q.t.slice(-1))&&q.t.length>1&&!/\s/.test(q.t.slice(-2,-1))?q.t.slice(0,-1)+J+q.t.slice(-1):q.t)});if(ni===ns.length-1&&out.length>1){var L=function(x){return Array.from(x.split(J).join('')).length},k=out.length-1,cnt=L(out[k]);while(k>0&&cnt<4){out[k-1]+=J;k--;cnt+=L(out[k])}}nd.nodeValue=out.join('')})})}
+function swap(v){document.documentElement.lang=v==='hk'?'zh-HK':'zh-Hant';document.querySelectorAll('.wrap *').forEach(function(el){if(el.children.length&&el.innerHTML.indexOf('<span class="big">')<0)return;var tw=el.dataset.tw;if(tw===undefined){var h=el.innerHTML.trim();if(!(h in HK))return;el.dataset.tw=h;tw=h}el.innerHTML=v==='hk'?HK[tw]:tw});phrase()}
 function set(v,save){swap(v);r=v;btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===v?'true':'false')});aw.forEach(function(a){a.hidden=a.dataset.r!==v});if(save){try{localStorage.setItem('fg-region',v)}catch(e){}}}
 btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.r,true)})});
 set(r,false);
