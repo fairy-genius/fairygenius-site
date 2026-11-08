@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex,nofollow">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>團隊故事 | Fairy Genius</title>
+<meta name="description" content="Fairy Genius 的團隊故事：一間教室裡的難題，遇上兩位創辦人和一整組 AI 員工，做出 Fairy Prompt。">
+<link rel="icon" href="img/fairy-mark.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<style>
+:root{--bg:#fafbf8;--surface:#ffffff;--fg:#273a33;--muted:#5f6d65;--line:#e1e7de;--green:#285c4d;--green-soft:#e6efe9;--on-green:#ffffff;--gold:#9a6b12;--gold-soft:#f5ecd6;--paper:#f3efe4;--ink:#10241c;--serif:"Noto Serif TC","Songti TC","PMingLiU",serif;--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){--bg:#111815;--surface:#17211c;--fg:#e3ebe6;--muted:#9aaaa1;--line:#26332d;--green:#7fc3a9;--green-soft:#1c2c26;--on-green:#0f1a15;--gold:#e0b45a;--gold-soft:#2e2615;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#111815;--surface:#17211c;--fg:#e3ebe6;--muted:#9aaaa1;--line:#26332d;--green:#7fc3a9;--green-soft:#1c2c26;--on-green:#0f1a15;--gold:#e0b45a;--gold-soft:#2e2615;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:16px/1.8 var(--sans);margin:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.wrap{max-width:880px;margin:0 auto}
+a{color:var(--green)}
+a:focus-visible,button:focus-visible{outline:2px solid var(--green);outline-offset:3px}
+.top{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:18px 0;border-bottom:1px solid var(--line);font-size:15px}
+.top b{font:700 16px var(--sans);letter-spacing:.04em;white-space:nowrap}
+.top a{text-decoration:none;font-weight:700;white-space:nowrap}
+.kick{font-size:13px;letter-spacing:.14em;color:var(--green);font-weight:700;margin:0 0 10px}
+h1{font:700 clamp(32px,7.4vw,52px)/1.25 var(--serif);margin:0 0 16px;text-wrap:balance}
+h2{font:700 clamp(23px,4.8vw,30px)/1.35 var(--serif);margin:0 0 12px;text-wrap:balance}
+.lead{margin:0;color:var(--muted);font-size:17px;max-width:34em;text-wrap:pretty}
+.btn{display:inline-block;font:700 16px var(--sans);padding:13px 24px;border-radius:8px;background:var(--green);color:var(--on-green);text-decoration:none;white-space:nowrap}
+.btn.ghost{background:transparent;color:var(--green);border:1.5px solid var(--green)}
+.hero{padding-block:48px 36px}
+/* 影片位置：放入影片時，把 .film 內的 .film-ph 換成 <video controls poster="…" src="…"> */
+.film{margin:28px 0 0;border-radius:14px;overflow:hidden;background:var(--ink);aspect-ratio:16/9;position:relative}
+.film video{width:100%;height:100%;display:block;object-fit:cover}
+.film-ph{position:absolute;inset:0;display:grid;grid-template-columns:1.25fr 1fr;align-items:center;color:#e8efe9;padding:0 6%;gap:4%}
+.film-ph .fp-pair{display:grid;grid-template-columns:1fr 1fr;gap:4%;min-width:0;align-self:center}.film-ph .fp-fig{background:var(--paper);border-radius:12px;width:100%;aspect-ratio:1/1;min-width:0}
+.film-ph .fp-fig{position:relative;overflow:hidden}.film-ph img.sil{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+.film-ph .fp-txt{display:grid;gap:8px;justify-items:start}
+.film-ph img.mark{width:44px;height:auto;background:var(--paper);border-radius:50%;padding:7px}
+.film-ph strong{font:700 clamp(15px,3.4vw,24px)/1.4 var(--serif)}
+.film-ph span{font-size:clamp(12px,2.4vw,14px);color:#b9c9bf}
+/* 五幕 */
+.acts{display:grid;gap:20px;margin:0;padding:0;list-style:none}
+.act{display:grid;grid-template-columns:56px 1fr;gap:0 18px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:22px}
+.act .no{font:700 34px/1 var(--serif);color:var(--gold);font-variant-numeric:tabular-nums}
+.act .when{display:inline-block;font:700 12px/1 var(--sans);letter-spacing:.06em;padding:4px 8px;border-radius:4px;background:var(--gold-soft);color:var(--gold);margin-bottom:8px}
+.act h3{font:700 19px/1.45 var(--sans);margin:0 0 8px;text-wrap:balance}
+.say{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+.say .av{width:36px;height:36px;border-radius:50%;background:var(--paper);display:grid;place-items:center}
+.say .av img{width:24px;height:auto}
+.say p{margin:0;background:var(--green-soft);border-radius:4px 14px 14px 14px;padding:12px 16px;text-wrap:pretty}
+.say p+p{margin-top:8px}
+.say .col{min-width:0}
+.big{font:700 clamp(28px,6vw,40px)/1.2 var(--serif);color:var(--gold);font-variant-numeric:tabular-nums}
+section.blk{padding-block:48px 8px}
+/* 時間軸 */
+.tl{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:0;padding:0;list-style:none}
+.tl>li{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px;min-width:0}
+.tl .m{font:700 20px/1.3 var(--serif);color:var(--green);margin:0 0 8px}
+.tl ul{margin:0;padding:0 0 0 1.1em;color:var(--muted);font-size:15px}
+.tl>li.go{background:var(--green);border-color:var(--green)}
+.tl>li.go .m,.tl>li.go ul{color:var(--on-green)}
+/* 創辦人 */
+.seg{display:inline-flex;border:1.5px solid var(--green);border-radius:8px;overflow:hidden;margin-bottom:16px}
+.seg button{font:700 14px var(--sans);padding:8px 16px;border:0;background:transparent;color:var(--green);cursor:pointer;white-space:nowrap}
+.seg button[aria-pressed="true"]{background:var(--green);color:var(--on-green)}
+.cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.card .pic{background:var(--paper);aspect-ratio:4/3;display:grid;place-items:center}
+.card .pic img{height:100%;width:auto;max-width:100%;object-fit:contain}
+.card .mono{font:700 88px/1 var(--serif);color:#285c4d}
+.card .bd{padding:18px 20px 22px}
+.card h3{font:700 20px/1.4 var(--sans);margin:0}
+.card .role{font-size:14px;color:var(--green);font-weight:700;margin:2px 0 10px}
+.card p{margin:0 0 8px;font-size:15px;color:var(--muted);text-wrap:pretty}
+.cards [hidden]{display:none}
+.faq{margin:0;max-width:36em;color:var(--muted);text-wrap:pretty}
+.team{margin-top:16px;border:1.5px dashed var(--line);border-radius:12px;padding:16px 20px;color:var(--muted);font-size:15px}
+.cta{margin-top:48px;background:var(--green-soft);border:1px solid var(--line);border-radius:14px;padding:28px;display:flex;flex-wrap:wrap;gap:16px 24px;align-items:center;justify-content:space-between}
+.cta h2{margin:0 0 4px}.cta p{margin:0;color:var(--muted);text-wrap:balance}
+footer{margin-top:56px;padding-block:24px 40px;border-top:1px solid var(--line);color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
+@media (max-width:720px){.tl,.cards{grid-template-columns:1fr}.hero{padding-block:36px 28px}.card .pic{aspect-ratio:16/10}}
+@media (max-width:520px){.act{grid-template-columns:1fr;padding:18px}.act .no{margin-bottom:6px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-pair{width:62%}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.cta{padding:22px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<nav class="top" aria-label="頁首"><b>FAIRY GENIUS</b><a href="#">回首頁</a></nav>
+
+<header class="hero">
+<p class="kick">團隊故事</p>
+<h1>老師的難題，遇上一組 AI 員工</h1>
+<p class="lead">我是 Fairy。這個故事從一間教室開始，我來說給你聽。</p>
+<!-- 完整版影片（2–3 分鐘）：做好後把整個 .film-ph 換成 <video controls preload="metadata" poster="img/film-poster.jpg" src="video/team-story-full.mp4"></video> -->
+<figure class="film" aria-label="團隊故事影片（完整版）">
+<div class="film-ph" role="img" aria-label="影片製作中">
+<div class="fp-pair"><div class="fp-fig"><img class="sil" src="img/msmfan_brush.webp" alt="" width="640" height="640"></div><div class="fp-fig"><img class="sil" src="img/richard_call.webp" alt="" width="640" height="640"></div></div>
+<div class="fp-txt"><img class="mark" src="img/fairy-mark.png" alt="" width="44" height="39"><strong>團隊故事影片</strong><span>完整版約 2 到 3 分鐘，製作中</span></div>
+</div>
+</figure>
+</header>
+
+<section class="blk" aria-labelledby="h-acts">
+<p class="kick">五個段落</p>
+<h2 id="h-acts">從一個痛點，到 1,500 多則 prompt</h2>
+<ol class="acts">
+
+<li class="act"><div class="no">1</div><div>
+<span class="when">起點</span>
+<h3>痛點：AI 工具很多，卻要自己摸索</h3>
+<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col">
+<p>故事從教室開始。老師要備課、要出題、要管班級，一天只有二十四小時。</p>
+<p>AI 工具愈來愈多，可是每一個都得自己摸索：該怎麼問，結果能不能拿去用。</p></div></div>
+</div></li>
+
+<li class="act"><div class="no">2</div><div>
+<span class="when">2026 年 9 月</span>
+<h3>一句話的點子：做一本「Prompt 辭典」</h3>
+<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col">
+<p>九月，Ms. M.Fan 提出一個很簡單的想法：做一本 Prompt 辭典。分好類、可以搜尋，找到了就一鍵複製。</p>
+<p>老師不必再各自從頭摸索。</p></div></div>
+</div></li>
+
+<li class="act"><div class="no">3</div><div>
+<span class="when">2026 年 9 月</span>
+<h3>三天出原型，它有了名字</h3>
+<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col">
+<p>Richard 聽完，三天就做出第一個原型。過幾天，它有了名字：Fairy Prompt。</p>
+<p>我就是替它說話的 Fairy。</p></div></div>
+</div></li>
+
+<li class="act"><div class="no">4</div><div>
+<span class="when">2026 年 9 月到 11 月</span>
+<h3>AI 員工：兩個月做出 1,500 多則</h3>
+<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col">
+<p>一本辭典，不能只靠兩個人寫。所以我們建立了一組 AI 員工：有的整理分類，有的把內容改寫成台灣版和香港版，有的翻成英文，有的替內容分級、檢查範例。</p>
+<p>Richard 把每個 AI 員工都當成一位清朝大臣：有人寫程式、有人審內容、有人畫圖，各有官職，做得好會升官。兩個人，就這樣帶著一整個朝廷。</p>
+<p>兩個月，<span class="big">1,500 多則</span>港台雙版、中英文的 prompt 做出來了。</p></div></div>
+</div></li>
+
+<li class="act"><div class="no">5</div><div>
+<span class="when">回到教室</span>
+<h3>能走進教室的，才留下來</h3>
+<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col">
+<p>辭典好不好用，要回到教室才知道。Ms. M.Fan 把課堂上的需求變成 prompt，許多都先在自己班上試過，才上架。</p>
+<p>能走進教室的，才留下來。11 月 30 日，Fairy Prompt 開放試用。</p></div></div>
+</div></li>
+
+</ol>
+</section>
+
+<section class="blk" aria-labelledby="h-tl">
+<p class="kick">時間軸</p>
+<h2 id="h-tl">三個月的路</h2>
+<ol class="tl">
+<li><p class="m">2026 年 9 月</p><ul><li>構想：Prompt 辭典</li><li>三天做出原型</li><li>命名 Fairy Prompt</li><li>建立 AI 員工</li></ul></li>
+<li><p class="m">10 月</p><ul><li>開始對外演講推廣</li><li>邀請制登入</li><li>港台分流</li></ul></li>
+<li class="go"><p class="m">11 月 30 日</p><ul><li>Fairy Prompt 開放試用</li></ul></li>
+</ol>
+</section>
+
+<section class="blk" aria-labelledby="h-who">
+<p class="kick">創辦人</p>
+<h2 id="h-who">兩位創辦人，加一整組 AI 員工</h2>
+<div class="seg" role="group" aria-label="顯示地區"><button type="button" data-r="tw" aria-pressed="true">台灣</button><button type="button" data-r="hk" aria-pressed="false">香港</button></div>
+<div class="cards">
+<article class="card"><div class="pic"><img src="img/msmfan_brush.webp" alt="Ms. M.Fan 的剪影，手持畫筆" width="640" height="640"></div><div class="bd">
+<h3>Ms. M.Fan</h3>
+<p class="role" data-r="tw">共同創辦人・香港中學教師</p>
+<p data-r="tw">Fairy Prompt 的點子與設計，都從她的課堂出發。</p>
+<p data-r="tw">她把課堂上的需求變成 prompt，在自己班上試過，才上架。</p>
+<p class="role" data-r="hk" hidden lang="en">Co-founder · Hong Kong secondary school teacher</p>
+<p data-r="hk" hidden lang="en">The ideas and design behind Fairy Prompt come from her classroom.</p>
+</div></article>
+<article class="card"><div class="pic"><img src="img/richard_call.webp" alt="Richard Tsai 的剪影" width="640" height="640"></div><div class="bd">
+<h3 data-r="tw">蔡宗翰</h3>
+<h3 data-r="hk" hidden lang="en">Prof. Richard Tsai</h3>
+<p data-r="tw">國立中央大學教授、中華民國人工智慧學會（TAAI）理事長，帶領一組以清朝大臣命名的 AI 員工。</p>
+<p data-r="tw">《天下雜誌》2024 台灣 AI 20（最具影響力 AI 人物）。</p>
+<p data-r="tw">著有《寫給中學生看的AI課》，獲吳大猷科普著作獎青少年特別獎。</p>
+<p data-r="hk" hidden lang="en">Professor, National Central University (Taiwan); President, Taiwanese Association for Artificial Intelligence (TAAI); leads a team of AI staff named after <span style="white-space:nowrap">Qing-dynasty</span> ministers.</p>
+<p data-r="hk" hidden lang="en">Named to CommonWealth Magazine's AI 20 Taiwan (2024).</p>
+<p data-r="hk" hidden lang="en">Author of an AI book for secondary students; a teachers' pick in HKedCity's Top Ten Book Picks.</p>
+</div></article>
+</div>
+<p class="team">還有一整組 AI 員工，負責開發、改寫、翻譯和日常營運。</p>
+</section>
+
+<section class="blk" aria-labelledby="h-faq">
+<p class="kick">常見問題</p>
+<h2 id="h-faq">AI 員工是什麼？</h2>
+<p class="faq">是一組各有分工的 AI 助手，負責寫程式、審內容、畫圖、改寫和翻譯。Richard 把每一個都當成一位清朝大臣，各有官職，做得好會升官。成品由兩位創辦人把關，能走進教室的，才上架。</p>
+</section>
+
+<div class="cta">
+<div><h2>11 月 30 日，開放試用</h2><p style="text-wrap:balance">Fairy Prompt 是 Fairy Genius 的第一個產品。</p></div>
+<a class="btn" href="https://fairyprompt.com" target="_blank" rel="noopener">看看 Fairy Prompt</a>
+</div>
+
+<footer><span>© 2026 Fairy Genius</span><span><a href="#">首頁</a>　<a href="https://fairyprompt.com" target="_blank" rel="noopener">fairyprompt.com</a></span></footer>
+</div>
+<script>
+(function(){
+var btns=document.querySelectorAll('.seg button'),aw=document.querySelectorAll('.cards [data-r]'),r='tw';
+try{var q=new URLSearchParams(location.search).get('region');
+if(q==='hk'||q==='tw')r=q;else{var s=localStorage.getItem('fg-region');if(s==='hk'||s==='tw')r=s;else if(/-HK\b/i.test(navigator.language||''))r='hk';}}catch(e){}
+var HK={"AI 員工：兩個月做出 1,500 多則": "AI 員工：兩個月製作 1,500 多則", "我是 Fairy。這個故事從一間教室開始，我來說給你聽。": "我是 Fairy。這個故事從一間課室開始，我來說給你聽。", "回首頁": "返回首頁", "團隊故事影片": "團隊故事短片", "完整版約 2 到 3 分鐘，製作中": "完整版約 2 至 3 分鐘，製作中", "故事從教室開始。老師要備課、要出題、要管班級，一天只有二十四小時。": "故事從課室開始。老師要備課、出題、管理班級，一天只有二十四小時。", "AI 工具愈來愈多，可是每一個都得自己摸索：該怎麼問，結果能不能拿去用。": "AI 工具愈來愈多，可是每一個都得自己摸索：該怎樣提問，結果能不能直接使用。", "Richard 聽完，三天就做出第一個原型。過幾天，它有了名字：Fairy Prompt。": "Richard 聽完，三天就做出第一個原型。再過幾天，它有了名字：Fairy Prompt。", "一本辭典，不能只靠兩個人寫。所以我們建立了一組 AI 員工：有的整理分類，有的把內容改寫成台灣版和香港版，有的翻成英文，有的替內容分級、檢查範例。": "一本辭典，不能只靠兩個人編寫。所以我們建立了一組 AI 員工：有的整理分類，有的把內容改寫成香港版和台灣版，有的翻譯成英文，有的為內容分級、檢查示例。", "Richard 把每個 AI 員工都當成一位清朝大臣：有人寫程式、有人審內容、有人畫圖，各有官職，做得好會升官。兩個人，就這樣帶著一整個朝廷。": "Richard 把每個 AI 員工都當成一位清朝大臣：有人編寫程式、有人審核內容、有人繪圖，各有官職，表現好就會升官。兩個人，就這樣帶領着一整個朝廷。", "兩個月，<span class=\"big\">1,500 多則</span>港台雙版、中英文的 prompt 做出來了。": "兩個月，<span class=\"big\">1,500 多則</span>港台雙版、中英文的 prompt 製作出來了。", "回到教室": "回到課室", "能走進教室的，才留下來": "能走進課室的，才留下來", "辭典好不好用，要回到教室才知道。Ms. M.Fan 把課堂上的需求變成 prompt，許多都先在自己班上試過，才上架。": "辭典好不好用，要回到課室才知道。Ms. M.Fan 把課堂上的需要變成 prompt，不少都先在自己班上試用過，才推出。", "能走進教室的，才留下來。11 月 30 日，Fairy Prompt 開放試用。": "能走進課室的，才留下來。11 月 30 日，Fairy Prompt 開放試用。", "開始對外演講推廣": "開始對外演講及推廣", "是一組各有分工的 AI 助手，負責寫程式、審內容、畫圖、改寫和翻譯。Richard 把每一個都當成一位清朝大臣，各有官職，做得好會升官。成品由兩位創辦人把關，能走進教室的，才上架。": "是一組各有分工的 AI 助手，負責編寫程式、審核內容、繪圖、改寫和翻譯。Richard 把每一個都當成一位清朝大臣，各有官職，表現好就會升官。成果由兩位創辦人把關，能走進課室的，才推出。"};
+function swap(v){document.documentElement.lang=v==='hk'?'zh-HK':'zh-Hant';document.querySelectorAll('.wrap *').forEach(function(el){if(el.children.length&&el.innerHTML.indexOf('<span class="big">')<0)return;var tw=el.dataset.tw;if(tw===undefined){var h=el.innerHTML.trim();if(!(h in HK))return;el.dataset.tw=h;tw=h}el.innerHTML=v==='hk'?HK[tw]:tw})}
+function set(v,save){swap(v);r=v;btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===v?'true':'false')});aw.forEach(function(a){a.hidden=a.dataset.r!==v});if(save){try{localStorage.setItem('fg-region',v)}catch(e){}}}
+btns.forEach(function(b){b.addEventListener('click',function(){set(b.dataset.r,true)})});
+set(r,false);
+})();
+</script>
+</body>
+</html>
