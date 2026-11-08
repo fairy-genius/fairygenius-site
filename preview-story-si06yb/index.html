@@ -40,6 +40,7 @@ h2{font:700 clamp(23px,4.8vw,30px)/1.35 var(--serif);margin:0 0 14px;text-wrap:b
 .film-ph img.mark{width:44px;height:auto;background:var(--surface);border-radius:50%;padding:7px}
 .film-ph strong{font:700 clamp(15px,3.4vw,24px)/1.4 var(--serif)}
 .film-ph span{font-size:clamp(12px,2.4vw,14px);color:var(--muted)}
+.film.vid{aspect-ratio:16/9;background:#000}.film.vid video{object-fit:contain}.vcap{display:flex;align-items:baseline;gap:10px;margin:12px 4px 0;font-size:16px}.vcap strong{font-weight:700}.vlen{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;white-space:nowrap}
 /* 五幕 */
 .acts{display:grid;gap:18px;margin:0;padding:0;list-style:none}
 .act{display:grid;grid-template-columns:60px 1fr;gap:0 18px;background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:24px}
@@ -139,13 +140,10 @@ h1 .nw{white-space:nowrap}
 <p class="si" data-v="zh">陪伴與守護</p><p class="si" data-v="en" lang="en">Companionship and protection</p>
 <p class="si" data-v="zh">支援與引導</p><p class="si" data-v="en" lang="en">Support and guidance</p>
 <p class="si" data-v="zh">創新與夢想</p><p class="si" data-v="en" lang="en">Innovation and dreams</p></div>
-<!-- 完整版影片（2–3 分鐘）：做好後把整個 .film-ph 換成 <video controls preload="metadata" poster="img/film-poster.jpg" src="video/team-story-full.mp4"></video> -->
-<figure class="film" aria-label="Film">
-<div class="film-ph" role="img" aria-label="Film in production">
-<div class="fp-pair"><div class="fp-fig"><img class="sil" src="img/msmfan_color.webp" alt="" width="800" height="800"></div><div class="fp-fig"><img class="sil b" src="img/richard_color.webp" alt="" width="800" height="800"></div></div>
-<div class="fp-txt"><img class="mark" src="img/fairy-mark.png" alt="" width="44" height="39"><strong data-v="tw">團隊故事影片</strong><strong data-v="hk">團隊故事短片</strong><strong data-v="en" lang="en">The Fairy Genius story</strong><span data-v="tw">完整版約 2 到 3 分鐘，製作中</span><span data-v="hk">完整版約 2 至 3 分鐘，製作中</span><span data-v="en" lang="en">Full version, about 2 to 3 minutes. In production.</span></div>
-</div>
+<figure class="film vid" aria-label="Fairy Genius story video">
+<video controls playsinline preload="metadata" poster="video/team-story.jpg" src="video/team-story.mp4"></video>
 </figure>
+<p class="vcap"><strong data-v="zh">團隊故事影片</strong><strong data-v="en" lang="en">The Fairy Genius story</strong><span class="vlen">2:58</span></p>
 </header>
 <section class="blk" aria-labelledby="h-acts">
 <p class="kick" data-v="zh">六個段落</p><p class="kick" data-v="en" lang="en">Six chapters</p>
@@ -170,6 +168,14 @@ h1 .nw{white-space:nowrap}
 <div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col"><p data-v="zh">Michelle Fan 把課堂的需要寫成 prompt，請大臣協助改寫。每一則都先在課堂試用，改了又改。</p><p data-v="en" lang="en">Michelle Fan turns her classroom's needs into prompts, and the ministers help polish them. Every prompt is tried in class and revised again and again.</p><p data-v="zh">像新藥經過臨床試驗，通過了，才收進庫裡。如今已有 1,500 多則中英文 prompt，每一則都有人把關。</p><p data-v="en" lang="en">Like a new medicine through clinical trials, a prompt earns its place only once tested. The library now holds over 1,500 prompts in Chinese and English, each checked by a person.</p></div></div>
 <p class="res"><i aria-hidden="true">★</i><span data-v="zh">成果：1,500 多則 prompt</span><span data-v="en" lang="en">Outcome: 1,500+ prompts</span></p></div></li>
 </ol></section>
+<section class="blk" aria-labelledby="h-msfan">
+<p class="kick" data-v="zh">Ms. Fan 老師說</p><p class="kick" data-v="en" lang="en">Ms. Fan speaks</p>
+<h2 id="h-msfan"><span data-v="zh">Fairy Prompt 怎麼來的</span><span data-v="en" lang="en">How Fairy Prompt began</span></h2>
+<figure class="film vid" aria-label="Ms. Fan: how Fairy Prompt began">
+<video controls playsinline preload="metadata" poster="video/msfan-origin.jpg" src="video/msfan-origin.mp4"></video>
+</figure>
+<p class="vcap"><strong data-v="zh">Ms. Fan 老師說：Fairy Prompt 怎麼來的</strong><strong data-v="en" lang="en">Ms. Fan: how Fairy Prompt began</strong><span class="vlen">1:35</span></p>
+</section>
 <section class="blk" aria-labelledby="h-who">
 <p class="kick" data-v="zh">創辦人</p><p class="kick" data-v="en" lang="en">Founders</p>
 <h2 id="h-who"><span data-v="zh">兩位創辦人，加一組 AI 員工</span><span data-v="en" lang="en">Two founders, plus a team of AI staff</span></h2>
