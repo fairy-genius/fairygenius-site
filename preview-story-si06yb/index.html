@@ -172,7 +172,8 @@ h1 .nw{white-space:nowrap}
 (function(){
 var L='zh',R='tw',btns=document.querySelectorAll('.seg button');
 try{var qs=new URLSearchParams(location.search),q=qs.get('region');
-R='intl';if(q==='hk'||q==='tw'||q==='intl')R=q;else if(/-HK\b/i.test(navigator.language||''))R='hk';else if(/-TW\b/i.test(navigator.language||''))R='tw';
+var h=(location.hostname||'').toLowerCase(),loc=!h||/^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$/.test(h)||/\.local$/.test(h);
+R='intl';if(q==='hk'||q==='tw'||q==='intl')R=q;else if(/\.hk$/.test(h))R='hk';else if(/\.tw$/.test(h))R='tw';else if(loc){if(/-HK\b/i.test(navigator.language||''))R='hk';else if(/-TW\b/i.test(navigator.language||''))R='tw';}
 var l=qs.get('lang')||localStorage.getItem('fg-lang');if(l==='en'||l==='zh')L=l;}catch(e){}
 var PROT=['第一個原型','第一個','一個原型','中英文','兩位創辦人','創辦人','清朝大臣','一則一則','一鍵複製','整理與改寫','千錘百鍊','不眠不休','蔡教授','森林仙子','電腦科學','臨床試驗','學術討論','一本辭典','一份熱誠','Prompt 辭典','AI 指令','AI 教授','AI 員工','陪伴與守護','支援與引導','創新與夢想','開放試用','森林仙子'],J='⁠',CJK=/[㐀-鿿]/,CL=/^[，。、；：！？）」』》”…—]+$/,PU='，。、；：！？）」』》”…—';
 function fixEn(t){return t.replace(/ ([^ ]+)$/,' $1').replace(/(Dr\.|Ms\.|Prof\.) /g,'$1 ').replace(/(Fairy) (Prompt|Genius)/g,'$1 $2').replace(/(AI) (tools|staff|prompts)/g,'$1 $2')}
