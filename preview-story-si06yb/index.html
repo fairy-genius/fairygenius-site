@@ -101,16 +101,17 @@ h1 .nw{white-space:nowrap}
 .soul p{margin:0}
 .soul .sk{font-weight:700;letter-spacing:.1em;color:var(--green);margin:6px 0 6px}
 .soul .si{font:700 clamp(22px,6vw,32px)/1.4 var(--serif);text-wrap:balance}
-.tl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
-.tl li{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 22px 10px 12px;white-space:nowrap;font-size:clamp(12.5px,3.4vw,17px);line-height:1.5}
-.tl li:nth-child(1){--tint:var(--green-soft)}.tl li:nth-child(2){--tint:var(--sky)}.tl li:nth-child(3){--tint:var(--gold-soft)}.tl li:nth-child(4){--tint:var(--peach)}
-.tl .tg{flex:none;background:var(--tint);border-radius:999px;padding:3px 12px;font-weight:700;font-size:.9em}
-.tl .tx{min-width:0}
+.story{display:grid;gap:14px}
+.st{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:20px 22px}
+.st:nth-child(1){--tint:var(--green-soft)}.st:nth-child(2){--tint:var(--sky)}.st:nth-child(3){--tint:var(--gold-soft)}.st:nth-child(4){--tint:var(--peach)}
+.st h3{font:700 19px/1.45 var(--sans);margin:0 0 8px;display:flex;align-items:center;gap:10px}
+.st h3 span[hidden]{display:none}
+.st .n{flex:none;width:30px;height:30px;border-radius:50%;background:var(--tint);display:grid;place-items:center;font:700 16px/1 var(--serif)}
+.st p{margin:0;text-wrap:pretty}
 .back{display:grid;gap:14px;margin-top:28px}
 .bk{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:18px 22px}
 .bk h3{font:700 19px/1.45 var(--sans);margin:0 0 6px}
 .bk p{margin:0;text-wrap:pretty}
-@media (max-width:420px){.tl li{gap:8px;padding:9px 12px 9px 8px}.tl .tg{padding:3px 9px}}
 </style>
 </head>
 <body>
@@ -130,14 +131,14 @@ h1 .nw{white-space:nowrap}
 </figure>
 <p class="vcap"><strong data-v="zh">團隊故事影片</strong><strong data-v="en" lang="en">The Fairy Genius story</strong><span class="vlen">2:57</span></p>
 </header>
-<section class="blk" aria-label="Timeline"><ol class="tl">
-<li><span class="tg" data-v="zh">願望</span><span class="tg" data-v="en" lang="en">Wish</span><span class="tx" data-v="zh">老師想多留時間給學生，也想讓學生輕鬆學 AI</span><span class="tx" data-v="en" lang="en">More time for students, easy AI learning</span></li>
-<li><span class="tg" data-v="zh">構想</span><span class="tg" data-v="en" lang="en">Idea</span><span class="tx" data-v="zh">一本 Prompt 辭典，翻開就找到</span><span class="tx" data-v="en" lang="en">A prompt dictionary: open it, find it</span></li>
-<li><span class="tg" data-v="zh">相遇</span><span class="tg" data-v="en" lang="en">Meeting</span><span class="tx" data-v="zh">Fairy 遇上 Genius，第一個原型證明做得到</span><span class="tx" data-v="en" lang="en">Fairy meets Genius; a prototype proves it</span></li>
-<li><span class="tg" data-v="zh">打造</span><span class="tg" data-v="en" lang="en">Build</span><span class="tx" data-v="zh">兩個月天天開會，做出 Fairy Prompt</span><span class="tx" data-v="en" lang="en">Two months, daily meetings: Fairy Prompt</span></li>
-</ol>
-<div class="back"><div class="bk"><h3 data-v="zh">以清朝大臣命名的 AI 員工</h3><h3 data-v="en" lang="en">AI staff named after Qing-dynasty ministers</h3>
-<p data-v="zh">每位大臣各有個性和專長：審查大臣出名嚴格，畫師大臣的畫總是很美。再先進的科技，也不該忘記歷史。</p><p data-v="en" lang="en">Each minister has a personality and a specialty: the reviewer is famously strict, and the court painter's pictures are always beautiful. However advanced the technology, we should not forget history.</p></div>
+<section class="blk" aria-label="Story"><div class="story">
+<article class="st"><h3><span class="n">1</span><span data-v="zh">想多留一點時間給學生</span><span data-v="en" lang="en">Making more room for students</span></h3><p data-v="zh">老師的日子很忙：備課、出題、帶班。Michelle Fan 想的不是少做一點，而是多留一點時間給學生，也想讓學生輕鬆學 AI 指令。可是 AI 工具愈來愈多，每一個都得自己摸索。</p><p data-v="en" lang="en">A teacher's days are full. Michelle Fan never asked how to do less. She asked how to leave more time for her students, and how to help them learn AI prompts the easy way. But AI tools keep multiplying, and each one has to be figured out from scratch.</p></article>
+<article class="st"><h3><span class="n">2</span><span data-v="zh">一本 Prompt 辭典</span><span data-v="en" lang="en">A prompt dictionary</span></h3><p data-v="tw">好 prompt 要怎麼收好？以後去哪裡找？愈存愈多怎麼辦？想分享給別人，又該怎麼給？她想要的答案，是一本有系統的 Prompt 辭典：翻開就找到，再從簡單的起點學起。</p><p data-v="hk">好 prompt 要怎樣收好？以後到哪裡找？愈存愈多怎麼辦？想分享給別人，又該怎樣給？她想要的答案，是一本有系統的 Prompt 辭典：翻開就找到，再從簡單的起點學起。</p><p data-v="en" lang="en">Where do you keep a good prompt? How do you find it again? What happens when there are hundreds? How do you share it? Her answer was a prompt dictionary: open it, find what you need, and learn from a simple starting point.</p></article>
+<article class="st"><h3><span class="n">3</span><span data-v="zh">Fairy，遇上 Genius</span><span data-v="en" lang="en">Fairy meets Genius</span></h3><p data-v="zh">她把想法說給一位 AI 教授聽：蔡教授。她問：做得到嗎？他說：應該可以。沒多久，第一個原型出現，證明真的做得到，兩個人心裡都充滿熱誠。Michelle Fan 心裡一直有一位帶學生探索寶藏的森林仙子，那是 Fairy；她覺得蔡教授就是 Genius。而我，就是那位 Fairy。</p><p data-v="en" lang="en">She put the idea to an AI professor, Dr. Tsai. Could it be built? He said it probably could. Before long the first prototype proved it, and it filled them both with passion. Michelle Fan had always pictured a forest fairy leading students to hidden treasure. That is Fairy. She knew Dr. Tsai was the Genius. And I am that Fairy.</p></article>
+<article class="st"><h3><span class="n">4</span><span data-v="zh">兩個月，同心打造</span><span data-v="en" lang="en">Two months, built together</span></h3><p data-v="zh">下課後、下班後，兩個人天天開會。她的點子一個接一個：寶箱、分類、收藏……蔡教授一個個做出來。短短兩個月，加上一組 AI 員工同心協力，做出的比他們自己想的還多。</p><p data-v="en" lang="en">After class and after work, the two met every day. Her ideas came one after another: the treasure box, the categories, the favourites. Dr. Tsai built each one. In just two months, with a team of AI staff working as one, they built more than either expected.</p></article>
+</div>
+<div class="back"><div class="bk"><h3 data-v="zh">借鏡盛世，治理 AI 員工</h3><h3 data-v="en" lang="en">Learning from a golden age to manage AI staff</h3>
+<p data-v="zh">蔡教授借重清朝盛世的帝王用人之道，來管理一群 AI 員工。每位 AI 都是一位大臣，各司其職，有專長也有個性：審查大臣出名嚴格，畫師大臣郎世寧的畫總是很美。有人奏事、有人審核、有人記錄功過，像朝廷一樣分工制衡，讓一群 AI 能穩定地做出好作品。</p><p data-v="en" lang="en">Dr. Tsai draws on how emperors of the Qing golden age chose and ran their ministers, and uses it to manage a team of AI staff. Each AI is a minister with a role of its own, a specialty and a personality: the reviewer is famously strict, and the court painter Giuseppe Castiglione paints pictures that are always beautiful. Some report, some review, some keep the record of merits and faults. Like a court, they divide the work and check one another, so the team can turn out good work steadily.</p></div>
 <div class="bk"><p data-v="zh">每則 prompt 都經過大臣審查與實測才收進庫裡；教學用的，更在 Ms. Fan 的課堂上試過。如今已有 1,500 多則中英文 prompt。</p><p data-v="en" lang="en">Every prompt is reviewed and tested by the ministers before it goes into the library; the teaching ones are also tried in Ms. Fan's classroom. The library now holds over 1,500 prompts in Chinese and English.</p></div></div></section>
 <section class="blk" aria-labelledby="h-msfan">
 <p class="kick" data-v="zh">Ms. Fan 老師說</p><p class="kick" data-v="en" lang="en">Ms. Fan speaks</p>
