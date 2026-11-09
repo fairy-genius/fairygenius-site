@@ -75,6 +75,7 @@ section.blk{padding-block:52px 8px}
 .mission{text-align:center;font:600 clamp(17px,4.6vw,22px)/1.6 var(--serif);color:var(--ink,inherit);margin:0 0 18px}
 .slogan .zh{font:700 clamp(48px,min(14vw,13vh),112px)/1.2 var(--serif);letter-spacing:.08em;white-space:nowrap;background:var(--g2);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent;padding:0 0 0 .08em}
 .slogan .en{font:700 clamp(18px,min(4.6vw,3.6vh),30px)/1.4 var(--sans);color:var(--muted);margin-top:4px;white-space:nowrap}
+.rgn{display:inline-flex;flex-wrap:wrap;gap:4px 12px;align-items:center;white-space:nowrap}.rgn button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;white-space:nowrap}.rgn .rgl{display:inline-flex;gap:12px;flex-wrap:wrap}.rgn .rgl[hidden]{display:none}.rgn .rgl button[aria-pressed=true]{font-weight:700;text-decoration:none}
 footer{margin-top:24px;padding-block:20px 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (max-width:720px){.cards{grid-template-columns:1fr}.hero{padding-block:36px 28px}}
 @media (max-width:520px){.card .role{font-size:12.5px;letter-spacing:-.01em}.film{border-radius:28px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-pair{width:62%}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.trailer{border-radius:36px}.card{border-radius:30px}}
@@ -168,14 +169,16 @@ h1 .nw{white-space:nowrap}
 <p class="mission" data-v="zh">以 AI 指令，啟發自主創作，<br>實現構思與夢想。</p><p class="mission" data-v="en" lang="en"><span class="nwp">With AI prompts,</span> <span class="nwp">we spark original creation</span> <span class="nwp">and bring ideas and dreams to life.</span></p>
 <div class="slogan" aria-label="Slogan"><div data-v="zh"><div class="zh">靈感湧現</div><div class="en z">Inspiration, unleashed.</div></div><div data-v="en" lang="en"><div class="zh e"><span>Inspiration,</span><span class="ec">unleashed.</span></div></div></div>
 </section>
-<footer><span>© 2026 Fairy Genius</span><span><a href="#" data-v="zh">首頁</a><a href="#" data-v="en" lang="en">Home</a>　<a href="https://fairyprompt.com" target="_blank" rel="noopener">fairyprompt.com</a></span></footer>
+<footer><span>© 2026 Fairy Genius</span><span><a href="#" data-v="zh">首頁</a><a href="#" data-v="en" lang="en">Home</a>　<a href="https://fairyprompt.com" target="_blank" rel="noopener">fairyprompt.com</a></span><span class="rgn"><button type="button" id="rgb" aria-expanded="false">地區</button><span class="rgl" id="rgl" hidden><button type="button" data-r="hk">Hong Kong</button><button type="button" data-r="tw">Taiwan</button><button type="button" data-r="intl">International</button></span></span></footer>
 </div>
 <script>
 (function(){
-var L='zh',R='intl',btns=document.querySelectorAll('.seg button'),CK='fg-region',done=false,qs=new URLSearchParams(location.search),h=(location.hostname||'').toLowerCase();
+var L='zh',R='intl',btns=document.querySelectorAll('.seg button'),CK='fg-region',PK='fg-region-set',done=false,qs=new URLSearchParams(location.search),h=(location.hostname||'').toLowerCase();
 var loc=!h||/^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$/.test(h)||/\.local$/.test(h);
 function okR(x){return x==='hk'||x==='tw'||x==='intl'}
 function ssGet(){try{return sessionStorage.getItem(CK)}catch(e){return null}}
+function lsGet(){try{return localStorage.getItem(PK)}catch(e){return null}}
+function setPref(v){var ok=false;try{localStorage.setItem(PK,v);ok=localStorage.getItem(PK)===v}catch(e){}if(!ok)ssSet(v)}
 function ssSet(v){try{sessionStorage.setItem(CK,v)}catch(e){}}
 try{var l=qs.get('lang')||localStorage.getItem('fg-lang');if(l==='en'||l==='zh')L=l}catch(e){}
 var PROT=['第一個原型','第一個','一個原型','中英文','兩位創辦人','創辦人','清朝大臣','一則一則','一鍵複製','整理與改寫','千錘百鍊','不眠不休','蔡教授','森林仙子','電腦科學','臨床試驗','學術討論','一本辭典','一份熱誠','Prompt 辭典','AI 指令','AI 教授','AI 員工','陪伴與守護','支援與引導','創新與夢想','開放試用','森林仙子'],J='⁠',CJK=/[㐀-鿿]/,CL=/^[，。、；：！？）」』》”…—]+$/,PU='，。、；：！？）」』》”…—';
@@ -185,7 +188,11 @@ function apply(){var v=L==='en'?'en':R,er=L==='en'?'intl':R;
 document.querySelectorAll('[data-v]').forEach(function(el){var d=el.dataset.v.split(' ');el.hidden=!(d.indexOf(v)>=0||d.indexOf('en'+er)>=0||(d.indexOf('zh')>=0&&L==='zh'))});
 document.querySelectorAll('[data-c]').forEach(function(el){el.hidden=el.dataset.c==='tw'?!(L==='zh'&&R==='tw'):(L==='zh'&&R==='tw')});
 btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===L?'true':'false')});
+var rb=document.getElementById('rgb');if(rb)rb.textContent=L==='en'?'Region':'地區';document.querySelectorAll('#rgl button').forEach(function(b){b.setAttribute('aria-pressed',b.dataset.r===R?'true':'false')});
 document.documentElement.lang=L==='en'?'en':(R==='hk'?'zh-HK':'zh-Hant')}
+var rb0=document.getElementById('rgb'),rl0=document.getElementById('rgl');
+if(rb0)rb0.addEventListener('click',function(){var o=rl0.hidden;rl0.hidden=!o;rb0.setAttribute('aria-expanded',o?'true':'false')});
+if(rl0)rl0.addEventListener('click',function(e){var b=e.target.closest('button[data-r]');if(!b)return;setPref(b.dataset.r);try{var u=new URL(location.href);u.searchParams.delete('region');history.replaceState(null,'',u.pathname+u.search+u.hash)}catch(x){}location.reload()});
 btns.forEach(function(b){b.addEventListener('click',function(){L=b.dataset.l;try{localStorage.setItem('fg-lang',L)}catch(e){}if(done)apply()})});
 function init(){
 var OA=['tw','hk','intl'].filter(function(k){return k!==R}).concat(['enhk','entw'].filter(function(k){return k!=='en'+R}));
@@ -198,8 +205,8 @@ var c=ssGet();if(okR(c))return finish(c,false);
 var ac=window.AbortController?new AbortController():null,t=setTimeout(function(){if(ac)try{ac.abort()}catch(e){}fail()},1500);
 function fail(){clearTimeout(t);finish(loc?byLang():'intl',false)}
 try{fetch('https://www.cloudflare.com/cdn-cgi/trace',{cache:'no-store',signal:ac?ac.signal:undefined}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(x){if(done)return;clearTimeout(t);var m=/^loc=([A-Z]{2})/m.exec(x);if(!m)return fail();finish(m[1]==='HK'?'hk':m[1]==='TW'?'tw':'intl',true)}).catch(function(){fail()})}catch(e){fail()}}
-var q=qs.get('region');
-if(okR(q))finish(q,false);else if(/\.hk$/.test(h))finish('hk',false);else if(/\.tw$/.test(h))finish('tw',false);else ipLookup();
+var q=qs.get('region'),pf=lsGet();
+if(okR(q))finish(q,false);else if(okR(pf))finish(pf,false);else if(/\.hk$/.test(h))finish('hk',false);else if(/\.tw$/.test(h))finish('tw',false);else ipLookup();
 })();
 </script>
 </body>
