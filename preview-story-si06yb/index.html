@@ -41,20 +41,6 @@ h2{font:700 clamp(23px,4.8vw,30px)/1.35 var(--serif);margin:0 0 14px;text-wrap:b
 .film-ph strong{font:700 clamp(15px,3.4vw,24px)/1.4 var(--serif)}
 .film-ph span{font-size:clamp(12px,2.4vw,14px);color:var(--muted)}
 .film.vid{aspect-ratio:16/9;background:#000}.film.vid video{object-fit:contain}.vcap{display:flex;align-items:baseline;gap:10px;margin:12px 4px 0;font-size:16px}.vcap strong{font-weight:700}.vlen{font-variant-numeric:tabular-nums;color:var(--muted);font-size:14px;white-space:nowrap}
-/* 五幕 */
-.acts{display:grid;gap:18px;margin:0;padding:0;list-style:none}
-.act{display:grid;grid-template-columns:60px 1fr;gap:0 18px;background:var(--surface);border:1px solid var(--line);border-radius:32px;padding:24px}
-.act:nth-child(5n+1){--tint:var(--green-soft)}.act:nth-child(5n+2){--tint:var(--sky)}.act:nth-child(5n+3){--tint:var(--gold-soft)}.act:nth-child(5n+4){--tint:var(--peach)}.act:nth-child(5n+5){--tint:var(--lilac)}
-.act .no{width:56px;height:56px;border-radius:50%;background:var(--tint);color:var(--fg);font:700 26px/1 var(--serif);display:grid;place-items:center;font-variant-numeric:tabular-nums}
-.act .when{display:inline-block;font:700 12px/1 var(--sans);letter-spacing:.06em;padding:6px 12px;border-radius:999px;background:var(--tint);color:var(--fg);margin-bottom:8px;white-space:nowrap}
-.act h3{font:700 19px/1.45 var(--sans);margin:0 0 10px;text-wrap:balance}
-.say{display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
-.say .av{width:36px;height:36px;border-radius:50%;background:var(--paper);display:grid;place-items:center}
-.say .av img{width:24px;height:auto}
-.say p{margin:0;background:var(--tint);border-radius:8px 22px 22px 22px;padding:12px 18px;text-wrap:pretty}
-.say p+p{margin-top:8px}
-.say .col{min-width:0}
-.big{font:700 clamp(28px,6vw,40px)/1.2 var(--serif);background:var(--g2);-webkit-background-clip:text;background-clip:text;color:transparent;-webkit-text-fill-color:transparent}
 section.blk{padding-block:52px 8px}
 /* 創辦人 */
 .seg{display:inline-flex;gap:4px;border:1.5px solid var(--green);border-radius:999px;padding:3px;margin-bottom:18px;background:var(--surface)}
@@ -89,7 +75,7 @@ section.blk{padding-block:52px 8px}
 .slogan .en{font:700 clamp(18px,min(4.6vw,3.6vh),30px)/1.4 var(--sans);color:var(--muted);margin-top:4px;white-space:nowrap}
 footer{margin-top:24px;padding-block:20px 40px;color:var(--muted);font-size:14px;display:flex;flex-wrap:wrap;gap:8px 24px;justify-content:space-between}
 @media (max-width:720px){.cards{grid-template-columns:1fr}.hero{padding-block:36px 28px}}
-@media (max-width:520px){.card .role{font-size:12.5px;letter-spacing:-.01em}.act{grid-template-columns:1fr;padding:20px}.act .no{margin-bottom:8px;width:48px;height:48px;font-size:22px}.film{border-radius:28px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-pair{width:62%}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.trailer{border-radius:36px}.card{border-radius:30px}}
+@media (max-width:520px){.card .role{font-size:12.5px;letter-spacing:-.01em}.film{border-radius:28px}.film-ph{grid-template-columns:1fr;justify-items:center;text-align:center;padding:4%}.film-ph .fp-pair{width:62%}.film-ph .fp-txt{justify-items:center}.film-ph img.mark{display:none}.trailer{border-radius:36px}.card{border-radius:30px}}
 @media (max-width:380px){.card .role{font-size:11.5px}}
 
 body .top{padding:8px 8px 8px 18px}.navr{display:flex;align-items:center;gap:8px}.top .seg{margin:0;padding:2px}.top .seg button{font-size:13px;padding:5px 12px}.top a{padding:6px 12px;font-size:14px}
@@ -110,17 +96,21 @@ h1 .nw{white-space:nowrap}
 .slogan .zh.e .ec{padding-right:.1em}
 .slogan .en.z{font-size:clamp(18px,min(4.6vw,3.6vh),30px)}
 .trailer .open.e{font-size:clamp(20px,min(5.4vw,6vh),44px)}
-.sum{margin:26px 0 0;background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:18px 22px 14px}
-.sum .kick{margin:0 0 8px}
-.sum .sl{margin:0;padding:7px 0 7px 16px;border-left:4px solid var(--green);margin-top:8px;font-weight:500;text-wrap:balance}
 .soul{margin:22px 0 0;text-align:center;padding:26px 20px 24px;border-radius:64px 18px 64px 18px;background:radial-gradient(circle at 15% 15%,#fff3b8,rgba(255,243,184,0) 45%),linear-gradient(135deg,#d4f6e4,#d3ecfb 55%,#e9e4ff);border:2px solid var(--green)}
 .soul .mk{width:44px;height:auto;background:#fff;border-radius:50%;padding:7px}
 .soul p{margin:0}
 .soul .sk{font-weight:700;letter-spacing:.1em;color:var(--green);margin:6px 0 6px}
 .soul .si{font:700 clamp(22px,6vw,32px)/1.4 var(--serif);text-wrap:balance}
-.res{display:flex;align-items:center;gap:10px;margin:14px 0 0;padding:9px 18px 9px 10px;border-radius:999px 26px 26px 999px;background:var(--tint);border:1.5px solid var(--fg);width:fit-content;max-width:100%;font-weight:700;line-height:1.5}
-.res i{font-style:normal;flex:none;width:28px;height:28px;border-radius:50%;background:var(--fg);color:#fff;display:grid;place-items:center;font-size:14px}
-.res span{text-wrap:balance;font-size:15px}.res span[data-v=zh],.res span[data-v=zh] *{white-space:nowrap}
+.tl{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.tl li{display:flex;align-items:center;gap:12px;background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:10px 22px 10px 12px;white-space:nowrap;font-size:clamp(12.5px,3.4vw,17px);line-height:1.5}
+.tl li:nth-child(1){--tint:var(--green-soft)}.tl li:nth-child(2){--tint:var(--sky)}.tl li:nth-child(3){--tint:var(--gold-soft)}.tl li:nth-child(4){--tint:var(--peach)}
+.tl .tg{flex:none;background:var(--tint);border-radius:999px;padding:3px 12px;font-weight:700;font-size:.9em}
+.tl .tx{min-width:0}
+.back{display:grid;gap:14px;margin-top:28px}
+.bk{background:var(--surface);border:1px solid var(--line);border-radius:28px;padding:18px 22px}
+.bk h3{font:700 19px/1.45 var(--sans);margin:0 0 6px}
+.bk p{margin:0;text-wrap:pretty}
+@media (max-width:420px){.tl li{gap:8px;padding:9px 12px 9px 8px}.tl .tg{padding:3px 9px}}
 </style>
 </head>
 <body>
@@ -130,11 +120,6 @@ h1 .nw{white-space:nowrap}
 <p class="kick" data-v="zh">團隊故事</p><p class="kick" data-v="en" lang="en">Our story</p>
 <h1><span data-v="zh"><span class="nw">一個願望，</span><span class="nw">一份熱誠，</span><span class="nw">一本辭典</span></span><span data-v="en" lang="en">A wish, a shared passion, and a dictionary</span></h1>
 <p class="lead"><span data-v="zh"><span class="ln">我是 Fairy，來說個故事給你聽。</span><span class="ln">故事從一位老師的願望開始。</span></span><span data-v="en" lang="en"><span class="ln">I'm Fairy. Let me tell you a story.</span><span class="ln">It begins with a teacher's wish.</span></span></p>
-<div class="sum" role="group" aria-label="Story in brief"><p class="kick" data-v="zh">整個故事</p><p class="kick" data-v="en" lang="en">The story in brief</p>
-<p class="sl" data-v="zh">老師的願望：一本 Prompt 辭典。</p><p class="sl" data-v="en" lang="en">A teacher's wish: a prompt dictionary.</p>
-<p class="sl" data-v="zh">她遇上蔡教授，從此有了 Fairy Genius。</p><p class="sl" data-v="en" lang="en">She met Dr. Tsai, and Fairy Genius was born.</p>
-<p class="sl" data-v="zh">短短兩個月，做出 Fairy Prompt。</p><p class="sl" data-v="en" lang="en">In just two months, they built Fairy Prompt.</p>
-<p class="sl" data-v="zh">11 月 30 日，開放試用。</p><p class="sl" data-v="en" lang="en">Open for trial on November 30.</p></div>
 <div class="soul"><img class="mk" src="img/fairy-mark.png" alt="" width="44" height="39">
 <p class="sk" data-v="zh">Fairy Genius 象徵</p><p class="sk" data-v="en" lang="en">Fairy Genius stands for</p>
 <p class="si" data-v="zh">陪伴與守護</p><p class="si" data-v="en" lang="en">Companionship and protection</p>
@@ -145,29 +130,15 @@ h1 .nw{white-space:nowrap}
 </figure>
 <p class="vcap"><strong data-v="zh">團隊故事影片</strong><strong data-v="en" lang="en">The Fairy Genius story</strong><span class="vlen">2:57</span></p>
 </header>
-<section class="blk" aria-labelledby="h-acts">
-<p class="kick" data-v="zh">六個段落</p><p class="kick" data-v="en" lang="en">Six chapters</p>
-<h2 id="h-acts"><span data-v="zh">從一個願望，到 Fairy Prompt</span><span data-v="en" lang="en">From a wish to Fairy Prompt</span></h2>
-<ol class="acts">
-<li class="act"><div class="no">1</div><div><span class="when" data-v="zh">起點</span><span class="when" data-v="en" lang="en">The beginning</span><h3><span data-v="zh">想多留一點時間給學生</span><span data-v="en" lang="en">Making more room for students</span></h3>
-<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col"><p data-v="zh">老師的日子很忙：備課、出題、帶班。Michelle Fan 想的不是少做一點，而是多留一點時間給學生。</p><p data-v="en" lang="en">A teacher's days are full. Michelle Fan never asked how to do less. She asked how to leave more time for her students.</p><p data-v="zh">她也想讓學生輕鬆學 AI 指令。可是 AI 工具愈來愈多，每一個都得自己摸索。</p><p data-v="en" lang="en">She wanted them to learn AI prompts the easy way. But AI tools keep multiplying, and each one has to be figured out from scratch.</p></div></div>
-<p class="res"><i aria-hidden="true">★</i><span data-v="zh">成果：一個清楚的願望</span><span data-v="en" lang="en">Outcome: a clear wish</span></p></div></li>
-<li class="act"><div class="no">2</div><div><span class="when" data-v="zh">構想</span><span class="when" data-v="en" lang="en">The idea</span><h3><span data-v="zh">一本 Prompt 辭典</span><span data-v="en" lang="en">A prompt dictionary</span></h3>
-<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col"><p data-v="tw">好 prompt 要怎麼收好？以後去哪裡找？愈存愈多怎麼辦？想分享給別人，又該怎麼給？</p><p data-v="hk">好 prompt 要怎樣收好？以後到哪裡找？愈存愈多怎麼辦？想分享給別人，又該怎樣給？</p><p data-v="en" lang="en">Where do you keep a good prompt? How do you find it again? What happens when there are hundreds? How do you share it?</p><p data-v="zh">她想要的答案，是一本有系統的 Prompt 辭典：翻開就找到，再從簡單的起點學起。</p><p data-v="en" lang="en">Her answer was a prompt dictionary: open it, find what you need, and learn from a simple starting point.</p></div></div>
-<p class="res"><i aria-hidden="true">★</i><span data-v="zh">成果：Prompt 辭典的構想</span><span data-v="en" lang="en">Outcome: the dictionary idea</span></p></div></li>
-<li class="act"><div class="no">3</div><div><span class="when" data-v="zh">相遇</span><span class="when" data-v="en" lang="en">The meeting</span><h3><span data-v="zh">Fairy，遇上 Genius</span><span data-v="en" lang="en">Fairy meets Genius</span></h3>
-<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col"><p data-v="zh">她把想法說給一位 AI 教授聽：蔡教授。她問：做得到嗎？他說：應該可以。</p><p data-v="en" lang="en">She put the idea to an AI professor, Dr. Tsai. Could it be built? He said it probably could.</p><p data-v="zh">沒多久，第一個原型出現，證明真的做得到。兩個人心裡都充滿熱誠。</p><p data-v="en" lang="en">Before long, the first prototype proved it could. That moment filled them both with passion.</p><p data-v="zh">Michelle Fan 心裡一直有一位帶學生探索寶藏的森林仙子，那是 Fairy；她覺得蔡教授就是 Genius。而我，就是那位 Fairy。</p><p data-v="en" lang="en">Michelle Fan had always pictured a forest fairy leading students to hidden treasure. That is Fairy. She knew Dr. Tsai was the Genius. And I am that Fairy.</p></div></div>
-<p class="res"><i aria-hidden="true">★</i><span data-v="zh">成果：Fairy Genius 的名字</span><span data-v="en" lang="en">Outcome: the name Fairy Genius</span></p></div></li>
-<li class="act"><div class="no">4</div><div><span class="when" data-v="zh">打造</span><span class="when" data-v="en" lang="en">The build</span><h3><span data-v="zh">兩個月，同心打造</span><span data-v="en" lang="en">Two months, built together</span></h3>
-<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col"><p data-v="zh">下課後、下班後，兩個人天天開會。她的點子一個接一個：寶箱、分類、收藏……蔡教授一個個做出來。</p><p data-v="en" lang="en">After class and after work, the two met every day. Her ideas came one after another: the treasure box, the categories, the favourites. Dr. Tsai built each one.</p><p data-v="zh">短短兩個月，加上一組 AI 員工同心協力，做出的比他們自己想的還多。</p><p data-v="en" lang="en">In just two months, with a team of AI staff working as one, they built more than either expected.</p></div></div>
-<p class="res"><i aria-hidden="true">★</i><span data-v="zh">成果：Fairy Prompt 成形</span><span data-v="en" lang="en">Outcome: Fairy Prompt takes shape</span></p></div></li>
-<li class="act"><div class="no">5</div><div><span class="when" data-v="zh">夥伴</span><span class="when" data-v="en" lang="en">The team</span><h3><span data-v="zh">一組以清朝大臣命名的 AI 員工</span><span data-v="en" lang="en">AI staff named after Qing-dynasty ministers</span></h3>
-<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col"><p data-v="zh">一本辭典，不能只靠兩個人。每位大臣各有個性，也各有專長：審查範例的大臣出了名的嚴格，畫師大臣筆下的畫總是很美。</p><p data-v="en" lang="en">A dictionary cannot rest on two people alone. Each minister has a personality and a specialty: the one who reviews examples is famously strict, and the court painter's pictures are always beautiful.</p><p data-v="zh">為什麼是清朝大臣？再先進的科技，也不該忘記歷史。有名字、有個性，才有溫度。</p><p data-v="en" lang="en">Why Qing-dynasty ministers? However advanced the technology, we should not forget history. A name and a personality give warmth.</p></div></div>
-<p class="res"><i aria-hidden="true">★</i><span data-v="zh">成果：各有專長的 AI 員工</span><span data-v="en" lang="en">Outcome: AI staff, each with a specialty</span></p></div></li>
-<li class="act"><div class="no">6</div><div><span class="when" data-v="zh">把關</span><span class="when" data-v="en" lang="en">Quality</span><h3><span data-v="zh">千錘百鍊，才收進庫裡</span><span data-v="en" lang="en">Tried and tested before it goes in</span></h3>
-<div class="say"><div class="av"><img src="img/fairy-mark.png" alt="Fairy" width="24" height="21"></div><div class="col"><p data-v="zh">Michelle Fan 把課堂的需要寫成 prompt，請大臣協助改寫。每一則都先在課堂試用，改了又改。</p><p data-v="en" lang="en">Michelle Fan turns her classroom's needs into prompts, and the ministers help polish them. Every prompt is tried in class and revised again and again.</p><p data-v="zh">像新藥經過臨床試驗，通過了，才收進庫裡。如今已有 1,500 多則中英文 prompt，每一則都有人把關。</p><p data-v="en" lang="en">Like a new medicine through clinical trials, a prompt earns its place only once tested. The library now holds over 1,500 prompts in Chinese and English, each checked by a person.</p></div></div>
-<p class="res"><i aria-hidden="true">★</i><span data-v="zh">成果：1,500 多則 prompt</span><span data-v="en" lang="en">Outcome: 1,500+ prompts</span></p></div></li>
-</ol></section>
+<section class="blk" aria-label="Timeline"><ol class="tl">
+<li><span class="tg" data-v="zh">願望</span><span class="tg" data-v="en" lang="en">Wish</span><span class="tx" data-v="zh">老師想多留時間給學生，也想讓學生輕鬆學 AI</span><span class="tx" data-v="en" lang="en">More time for students, easy AI learning</span></li>
+<li><span class="tg" data-v="zh">構想</span><span class="tg" data-v="en" lang="en">Idea</span><span class="tx" data-v="zh">一本 Prompt 辭典，翻開就找到</span><span class="tx" data-v="en" lang="en">A prompt dictionary: open it, find it</span></li>
+<li><span class="tg" data-v="zh">相遇</span><span class="tg" data-v="en" lang="en">Meeting</span><span class="tx" data-v="zh">Fairy 遇上 Genius，第一個原型證明做得到</span><span class="tx" data-v="en" lang="en">Fairy meets Genius; a prototype proves it</span></li>
+<li><span class="tg" data-v="zh">打造</span><span class="tg" data-v="en" lang="en">Build</span><span class="tx" data-v="zh">兩個月天天開會，做出 Fairy Prompt</span><span class="tx" data-v="en" lang="en">Two months, daily meetings: Fairy Prompt</span></li>
+</ol>
+<div class="back"><div class="bk"><h3 data-v="zh">以清朝大臣命名的 AI 員工</h3><h3 data-v="en" lang="en">AI staff named after Qing-dynasty ministers</h3>
+<p data-v="zh">每位大臣各有個性和專長：審查大臣出名嚴格，畫師大臣的畫總是很美。再先進的科技，也不該忘記歷史。</p><p data-v="en" lang="en">Each minister has a personality and a specialty: the reviewer is famously strict, and the court painter's pictures are always beautiful. However advanced the technology, we should not forget history.</p></div>
+<div class="bk"><p data-v="zh">每則 prompt 都經過大臣審查與實測才收進庫裡；教學用的，更在 Ms. Fan 的課堂上試過。如今已有 1,500 多則中英文 prompt。</p><p data-v="en" lang="en">Every prompt is reviewed and tested by the ministers before it goes into the library; the teaching ones are also tried in Ms. Fan's classroom. The library now holds over 1,500 prompts in Chinese and English.</p></div></div></section>
 <section class="blk" aria-labelledby="h-msfan">
 <p class="kick" data-v="zh">Ms. Fan 老師說</p><p class="kick" data-v="en" lang="en">Ms. Fan speaks</p>
 <h2 id="h-msfan"><span data-v="zh">Fairy Prompt 怎麼來的</span><span data-v="en" lang="en">How Fairy Prompt began</span></h2>
@@ -177,13 +148,12 @@ h1 .nw{white-space:nowrap}
 <p class="vcap"><strong data-v="zh">Ms. Fan 老師說：Fairy Prompt 怎麼來的</strong><strong data-v="en" lang="en">Ms. Fan: how Fairy Prompt began</strong><span class="vlen">1:35</span></p>
 </section>
 <section class="blk" aria-labelledby="h-who">
-<p class="kick" data-v="zh">創辦人</p><p class="kick" data-v="en" lang="en">Founders</p>
-<h2 id="h-who"><span data-v="zh">兩位創辦人，加一組 AI 員工</span><span data-v="en" lang="en">Two founders, plus a team of AI staff</span></h2>
+<h2 id="h-who"><span data-v="zh">創辦人</span><span data-v="en" lang="en">Founders</span></h2>
 <div class="cards">
-<article class="card" data-c="tw"><div class="pic" role="img" aria-label="Michelle Fan"><img class="sil" src="img/msmfan_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Michelle Fan</h3><p class="role"><span>共同創辦人</span><span>老師</span><span>AI 愛好者</span></p><p>資深中學老師，任教視覺藝術科，以及公民、經濟與社會科，並負責其他學習經歷（OLE）。</p><p>Fairy Prompt 的構想人：她提出「Prompt 辭典」——分類、搜尋、一鍵複製。</p><p>品牌標誌與視覺風格由她設計定稿；她寫的 prompt 都先在課堂試用、改了又改，千錘百鍊後才收進庫裡。</p></div></article>
-<article class="card" data-c="en" lang="en"><div class="pic" role="img" aria-label="Michelle Fan"><img class="sil" src="img/msmfan_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Michelle Fan</h3><p class="role"><span>Co-founder</span><span>Teacher</span><span>AI Enthusiast</span></p><p>An experienced secondary school teacher of Visual Arts and Citizenship, Economics and Society, who also runs Other Learning Experiences (OLE).</p><p>Conceived Fairy Prompt&nbsp;— a "prompt dictionary" you can browse, search and copy in one tap.</p><p>Designed the brand mark and visual style; the site's clean, minimal look is hers.</p><p>She writes her prompts herself, tests them in her own classroom and refines them again and again before they go into the library.</p></div></article>
-<article class="card" data-c="tw"><div class="pic" role="img" aria-label="Prof. Tzong-Han Tsai"><img class="sil b" src="img/richard_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>蔡宗翰</h3><p class="role"><span>共同創辦人</span><span>AI 教授</span><span>TAAI 理事長</span></p><p>任教於國立中央大學，並於中央研究院人文社會科學研究中心合聘；現任中華民國人工智慧學會（TAAI）理事長，帶領一組以清朝大臣命名的 AI 員工。</p><p>《天下雜誌》2024 台灣 AI 20 <span style="white-space:nowrap">（最具影響力 AI 人物）。</span></p><p>著有《寫給中學生看的AI課》，獲吳大猷科普著作獎青少年特別獎。</p><p class="more"><a href="https://iisr.csie.ncu.edu.tw/pi.html" target="_blank" rel="noopener">了解更多 →</a></p></div></article>
-<article class="card" data-c="en" lang="en"><div class="pic" role="img" aria-label="Prof. Tzong-Han Tsai"><img class="sil b" src="img/richard_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Prof. Tzong-Han Tsai</h3><p class="role"><span>Co-founder</span><span>AI Professor</span><span>TAAI President</span></p><p>At National Central University, with a joint appointment at the Research Center for Humanities and Social Sciences, Academia Sinica; President of the Taiwanese Association for Artificial Intelligence (TAAI); leads a team of AI staff named after <span style="white-space:nowrap">Qing-dynasty</span> ministers.</p><p>Named to CommonWealth Magazine's AI 20 (2024).</p><p>Author of an AI book for secondary students; a teachers' pick in HKedCity's Top Ten Book Picks.</p><p class="more"><a href="https://iisr.csie.ncu.edu.tw/pi.html" target="_blank" rel="noopener">More about Prof. Tsai →</a></p></div></article>
+<article class="card" data-c="tw"><div class="pic" role="img" aria-label="Michelle Fan"><img class="sil" src="img/msmfan_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Michelle Fan</h3><p class="role"><span>共同創辦人</span><span>老師</span><span>AI 愛好者</span></p><p>資深中學老師，任教視覺藝術科，以及公民、經濟與社會科，並負責其他學習經歷（OLE）。</p><p>Fairy Prompt 的構想人：她提出「Prompt 辭典」——分類、搜尋、一鍵複製。</p><p>品牌標誌與視覺風格由她設計定稿。</p></div></article>
+<article class="card" data-c="en" lang="en"><div class="pic" role="img" aria-label="Michelle Fan"><img class="sil" src="img/msmfan_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Michelle Fan</h3><p class="role"><span>Co-founder</span><span>Teacher</span><span>AI Enthusiast</span></p><p>An experienced secondary school teacher of Visual Arts and Citizenship, Economics and Society, who also runs Other Learning Experiences (OLE).</p><p>Conceived Fairy Prompt&nbsp;— a "prompt dictionary" you can browse, search and copy in one tap.</p><p>Designed the brand mark and visual style; the site's clean, minimal look is hers.</p></div></article>
+<article class="card" data-c="tw"><div class="pic" role="img" aria-label="Prof. Tzong-Han Tsai"><img class="sil b" src="img/richard_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>蔡宗翰</h3><p class="role"><span>共同創辦人</span><span>AI 教授</span><span>TAAI 理事長</span></p><p>任教於國立中央大學，並於中央研究院人文社會科學研究中心合聘；現任中華民國人工智慧學會（TAAI）理事長。</p><p>《天下雜誌》2024 台灣 AI 20 <span style="white-space:nowrap">（最具影響力 AI 人物）。</span></p><p>著有《寫給中學生看的AI課》，獲吳大猷科普著作獎青少年特別獎。</p><p class="more"><a href="https://iisr.csie.ncu.edu.tw/pi.html" target="_blank" rel="noopener">了解更多 →</a></p></div></article>
+<article class="card" data-c="en" lang="en"><div class="pic" role="img" aria-label="Prof. Tzong-Han Tsai"><img class="sil b" src="img/richard_color.webp" alt="" width="800" height="800"></div><div class="bd"><h3>Prof. Tzong-Han Tsai</h3><p class="role"><span>Co-founder</span><span>AI Professor</span><span>TAAI President</span></p><p>At National Central University, with a joint appointment at the Research Center for Humanities and Social Sciences, Academia Sinica; President of the Taiwanese Association for Artificial Intelligence (TAAI).</p><p>Named to CommonWealth Magazine's AI 20 (2024).</p><p>Author of an AI book for secondary students; a teachers' pick in HKedCity's Top Ten Book Picks.</p><p class="more"><a href="https://iisr.csie.ncu.edu.tw/pi.html" target="_blank" rel="noopener">More about Prof. Tsai →</a></p></div></article>
 </div></section>
 <section class="finale" aria-label="Coming soon"><div class="trailer">
 <div class="soon" data-v="zh">敬請期待</div><div class="soon e" data-v="en" lang="en">Coming soon</div>
