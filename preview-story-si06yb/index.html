@@ -9,7 +9,9 @@
 <link rel="icon" href="img/fairy-mark.png">
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;500;700&family=Noto+Serif+TC:wght@600;700&display=swap">
+<script>document.documentElement.classList.add('rg-wait');setTimeout(function(){document.documentElement.classList.remove('rg-wait')},2600)</script>
 <style>
+html.rg-wait .wrap{visibility:hidden}
 :root{color-scheme:light;--bg:#f6fbf7;--surface:#ffffff;--fg:#1f3a31;--muted:#566a60;--line:#d9eadf;--green:#178060;--green-soft:#e0f5e9;--on-green:#ffffff;--gold:#a35f00;--gold-soft:#fff0c2;--sky:#dcf0fb;--peach:#ffe3d3;--lilac:#e9e4ff;--paper:#fff6e0;--ink:#1f3a31;--serif:"Noto Serif TC","Songti TC","PMingLiU",serif;--sans:"Noto Sans TC","PingFang TC","Microsoft JhengHei",sans-serif;--g1:linear-gradient(165deg,#22b987 0%,#2f9fe6 55%,#8f6cf0 100%);--g2:linear-gradient(165deg,#ffb23c 0%,#f5607e 55%,#8f6cf0 100%)}
 *{box-sizing:border-box}
 body{background:var(--bg);color:var(--fg);font:16px/1.8 var(--sans);margin:0;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
@@ -170,22 +172,34 @@ h1 .nw{white-space:nowrap}
 </div>
 <script>
 (function(){
-var L='zh',R='tw',btns=document.querySelectorAll('.seg button');
-try{var qs=new URLSearchParams(location.search),q=qs.get('region');
-var h=(location.hostname||'').toLowerCase(),loc=!h||/^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$/.test(h)||/\.local$/.test(h);
-R='intl';if(q==='hk'||q==='tw'||q==='intl')R=q;else if(/\.hk$/.test(h))R='hk';else if(/\.tw$/.test(h))R='tw';else if(loc){if(/-HK\b/i.test(navigator.language||''))R='hk';else if(/-TW\b/i.test(navigator.language||''))R='tw';}
-var l=qs.get('lang')||localStorage.getItem('fg-lang');if(l==='en'||l==='zh')L=l;}catch(e){}
+var L='zh',R='intl',btns=document.querySelectorAll('.seg button'),CK='fg-region',done=false,qs=new URLSearchParams(location.search),h=(location.hostname||'').toLowerCase();
+var loc=!h||/^(localhost|127\.0\.0\.1|\[::1\]|0\.0\.0\.0)$/.test(h)||/\.local$/.test(h);
+function okR(x){return x==='hk'||x==='tw'||x==='intl'}
+function ssGet(){try{return sessionStorage.getItem(CK)}catch(e){return null}}
+function ssSet(v){try{sessionStorage.setItem(CK,v)}catch(e){}}
+try{var l=qs.get('lang')||localStorage.getItem('fg-lang');if(l==='en'||l==='zh')L=l}catch(e){}
 var PROT=['第一個原型','第一個','一個原型','中英文','兩位創辦人','創辦人','清朝大臣','一則一則','一鍵複製','整理與改寫','千錘百鍊','不眠不休','蔡教授','森林仙子','電腦科學','臨床試驗','學術討論','一本辭典','一份熱誠','Prompt 辭典','AI 指令','AI 教授','AI 員工','陪伴與守護','支援與引導','創新與夢想','開放試用','森林仙子'],J='⁠',CJK=/[㐀-鿿]/,CL=/^[，。、；：！？）」』》”…—]+$/,PU='，。、；：！？）」』》”…—';
 function fixEn(t){return t.replace(/ ([^ ]+)$/,' $1').replace(/(Dr\.|Ms\.|Prof\.) /g,'$1 ').replace(/(Fairy) (Prompt|Genius)/g,'$1 $2').replace(/(AI) (tools|staff|prompts)/g,'$1 $2')}
 function phrase(){if(!window.Intl||!Intl.Segmenter)return;var sg=new Intl.Segmenter('zh-Hant',{granularity:'word'});document.querySelectorAll('.wrap h1 span,.wrap h2,.wrap h3 span,.wrap p,.wrap strong,.wrap .when,.wrap .sub,.wrap .film-ph span').forEach(function(el){if(el.querySelector('p,h2,h3'))return;var tw=document.createTreeWalker(el,NodeFilter.SHOW_TEXT),ns=[],n;while(n=tw.nextNode())ns.push(n);ns.forEach(function(nd,ni){var t=nd.nodeValue.split(J).join('').replace(/(Fairy|Ms\.|Dr\.) (Prompt|Genius|M\.Fan|Tsai)/g,'$1 $2').replace(/(AI) (工具|員工|教授|指令|愛好者)/g,'$1 $2').replace(/(\d+) (月|日|多則)/g,'$1 $2').replace(/(Prompt) (辭典)/g,'$1 $2');if(!CJK.test(t)){nd.nodeValue=(ni===ns.length-1&&/ /.test(t)&&el.closest('[lang="en"]'))?fixEn(t):t;return}var parts=[];Array.from(sg.segment(t)).forEach(function(g){var w=g.segment;if(CL.test(w)&&parts.length){parts[parts.length-1].t+=w;return}parts.push({t:w,s:g.index,w:g.isWordLike&&CJK.test(w)&&Array.from(w).length>1})});var rg=[];PROT.forEach(function(ph){var i=t.indexOf(ph);while(i>=0){rg.push([i,i+ph.length]);i=t.indexOf(ph,i+ph.length)}});rg.forEach(function(r){var f=-1;parts.forEach(function(q,qi){var e=q.s+q.t.length;if(q.s<r[1]&&e>r[0]){if(f<0)f=qi;else{parts[f].t+=q.t;q.t='';q.dead=1}}});if(f>=0)parts[f].w=true});parts=parts.filter(function(q){return !q.dead});var out=parts.map(function(q){var core=q.t.replace(new RegExp('['+PU+']+$'),''),tail=q.t.slice(core.length);return q.w?Array.from(core).join(J)+(tail?J+tail:''):(tail&&core.length&&!/\s$/.test(core)?core+J+tail:q.t)});if(ni===ns.length-1&&out.length>1){var Ln=function(x){return Array.from(x.split(J).join('')).length},k=out.length-1,cnt=Ln(out[k]);while(k>0&&cnt<5){out[k-1]+=J;k--;cnt+=Ln(out[k])}}nd.nodeValue=out.join('')})})}
-function apply(){var v=L==='en'?'en':R;
-document.querySelectorAll('[data-v]').forEach(function(el){var d=el.dataset.v.split(' ');el.hidden=!(d.indexOf(v)>=0||d.indexOf('en'+R)>=0||(d.indexOf('zh')>=0&&L==='zh'))});
+function apply(){var v=L==='en'?'en':R,er=L==='en'?'intl':R;
+document.querySelectorAll('[data-v]').forEach(function(el){var d=el.dataset.v.split(' ');el.hidden=!(d.indexOf(v)>=0||d.indexOf('en'+er)>=0||(d.indexOf('zh')>=0&&L==='zh'))});
 document.querySelectorAll('[data-c]').forEach(function(el){el.hidden=el.dataset.c==='tw'?!(L==='zh'&&R==='tw'):(L==='zh'&&R==='tw')});
 btns.forEach(function(b){b.setAttribute('aria-pressed',b.dataset.l===L?'true':'false')});
 document.documentElement.lang=L==='en'?'en':(R==='hk'?'zh-HK':'zh-Hant')}
-btns.forEach(function(b){b.addEventListener('click',function(){L=b.dataset.l;try{localStorage.setItem('fg-lang',L)}catch(e){}apply()})});
-var OT=['tw','hk','intl'].filter(function(k){return k!==R}),OA=OT.concat(OT.map(function(k){return 'en'+k}));document.querySelectorAll('[data-v]').forEach(function(el){var d=el.dataset.v.split(' ');if(d.every(function(t){return OA.indexOf(t)>=0}))el.remove()});
-phrase();apply();
+btns.forEach(function(b){b.addEventListener('click',function(){L=b.dataset.l;try{localStorage.setItem('fg-lang',L)}catch(e){}if(done)apply()})});
+function init(){
+var OA=['tw','hk','intl'].filter(function(k){return k!==R}).concat(['enhk','entw'].filter(function(k){return k!=='en'+R}));
+document.querySelectorAll('[data-v]').forEach(function(el){var d=el.dataset.v.split(' ');if(d.every(function(t){return OA.indexOf(t)>=0}))el.remove()});
+phrase();apply()}
+function finish(r,cache){if(done)return;done=true;R=r;if(cache)ssSet(r);document.documentElement.setAttribute('data-region',r);try{init()}catch(e){}document.documentElement.classList.remove('rg-wait')}
+function byLang(){var n=navigator.language||'';return /-HK\b/i.test(n)?'hk':/-TW\b/i.test(n)?'tw':'intl'}
+function ipLookup(){
+var c=ssGet();if(okR(c))return finish(c,false);
+var ac=window.AbortController?new AbortController():null,t=setTimeout(function(){if(ac)try{ac.abort()}catch(e){}fail()},1500);
+function fail(){clearTimeout(t);finish(loc?byLang():'intl',false)}
+try{fetch('https://www.cloudflare.com/cdn-cgi/trace',{cache:'no-store',signal:ac?ac.signal:undefined}).then(function(r){if(!r.ok)throw 0;return r.text()}).then(function(x){if(done)return;clearTimeout(t);var m=/^loc=([A-Z]{2})/m.exec(x);if(!m)return fail();finish(m[1]==='HK'?'hk':m[1]==='TW'?'tw':'intl',true)}).catch(function(){fail()})}catch(e){fail()}}
+var q=qs.get('region');
+if(okR(q))finish(q,false);else if(/\.hk$/.test(h))finish('hk',false);else if(/\.tw$/.test(h))finish('tw',false);else ipLookup();
 })();
 </script>
 </body>
